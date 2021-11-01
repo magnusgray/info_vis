@@ -73,9 +73,9 @@ corr = data_of_interest.corr()
 filtered_corr = corr[((corr >= .5) | (corr <= -.5)) & (corr !=1.000)]
 #filtered_corr.style.background_gradient(cmap='coolwarm').set_precision(4).to_excel('./corr_tables/nsch_2020_topical_data_of_interest_filtered.xlsx', engine='xlsxwriter')
 
-sn.heatmap(filtered_corr, annot=False, cmap="coolwarm", linewidths=.5, linecolor='gray')
-plt.title("Top Correlations Among Variables of Interest")
-plt.savefig('./heatmaps/nsch_2020_topical_data_of_interest_filtered.png')
+#sn.heatmap(filtered_corr, annot=False, cmap="coolwarm", linewidths=.5, linecolor='gray')
+#plt.title("Top Correlations Among Variables of Interest")
+#plt.savefig('./heatmaps/nsch_2020_topical_data_of_interest_filtered.png')
 
 sn.heatmap(corr, annot=False, cmap="coolwarm", linewidths=.5, linecolor='gray')
 plt.title("Correlations Among Variables of Interest")
