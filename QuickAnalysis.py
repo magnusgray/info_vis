@@ -4,26 +4,6 @@ import matplotlib.pyplot as plt
 import seaborn as sn
 plt.rcParams["figure.figsize"] = (20, 15)
 
-def get_redundant_pairs(df):
-    '''Get diagonal and lower triangular pairs of correlation matrix'''
-    pairs_to_drop = set()
-    cols = df.columns
-    for i in range(0, df.shape[1]):
-        for j in range(0, i+1):
-            pairs_to_drop.add((cols[i], cols[j]))
-    return pairs_to_drop
-
-def get_top_abs_correlations(df, n=5):
-    au_corr = df.corr().abs().unstack()
-    labels_to_drop = get_redundant_pairs(df)
-    au_corr = au_corr.drop(labels=labels_to_drop).sort_values(ascending=False)
-    return au_corr[0:n]
-
-### Create Correlation Table of All 2020 Data
-#all_data = pd.read_csv('./data/nsch_2020_topical.csv')
-#corr = selected_data.corr()
-#corr.style.background_gradient(cmap='coolwarm').set_precision(4).to_excel('./corr_tables/nsch_2020_topical.xlsx', engine='xlsxwriter')
-
 adult1_columns = ['a1_age', 'a1_sex', 'a1_employed', 'a1_grade', 'a1_menthealth', 'a1_physhealth', 'a1_marital', 'a1_relation']
 adult2_columns = ['a2_age', 'a2_sex', 'a2_employed', 'a2_grade', 'a2_menthealth', 'a2_physhealth', 'a2_marital', 'a2_relation']
 gen_adult_info = ['family_r', 'famcount', 'totkids_r', 'k9q40', 'k9q41', 'k7q33', 'k8q35', 'hopeful', 'k8q31', 'k8q32', 'k8q34']
@@ -38,6 +18,11 @@ all_selected_vars = adult1_columns + adult2_columns + gen_adult_info + gen_child
 all_adult_vars = adult1_columns + adult2_columns + gen_adult_info
 all_child_vars = gen_child_info + child_experiences + phys_health + ment_health + other_health
 all_child_health = phys_health + ment_health + other_health
+
+### Create Correlation Table of All 2020 Data
+#all_data = pd.read_csv('./data/nsch_2020_topical.csv')
+#corr = selected_data.corr()
+#corr.style.background_gradient(cmap='coolwarm').set_precision(4).to_excel('./corr_tables/nsch_2020_topical.xlsx', engine='xlsxwriter')
 
 ### Create Correlation Table of Only Selected Variables
 #selected_data = pd.read_csv('./data/nsch_2020_topical.csv')[all_selected_vars]
@@ -65,6 +50,21 @@ all_child_health = phys_health + ment_health + other_health
 #corr.style.background_gradient(cmap='coolwarm').set_precision(4).to_excel('./corr_tables/nsch_2020_topical_data_of_interest.xlsx', engine='xlsxwriter')
 
 ### Get Top Correlations
+def get_redundant_pairs(df):
+    '''Get diagonal and lower triangular pairs of correlation matrix'''
+    pairs_to_drop = set()
+    cols = df.columns
+    for i in range(0, df.shape[1]):
+        for j in range(0, i+1):
+            pairs_to_drop.add((cols[i], cols[j]))
+    return pairs_to_drop
+
+def get_top_abs_correlations(df, n=5):
+    au_corr = df.corr().abs().unstack()
+    labels_to_drop = get_redundant_pairs(df)
+    au_corr = au_corr.drop(labels=labels_to_drop).sort_values(ascending=False)
+    return au_corr[0:n]
+
 data_of_interest = pd.read_csv('./data/nsch_2020_topical.csv')[columns_of_interest]
 print("Top Correlations")
 print(get_top_abs_correlations(data_of_interest, 25))
@@ -73,5 +73,5 @@ corr = data_of_interest.corr()
 filtered_corr = corr[((corr >= .5) | (corr <= -.5)) & (corr !=1.000)]
 #filtered_corr.style.background_gradient(cmap='coolwarm').set_precision(4).to_excel('./corr_tables/nsch_2020_topical_data_of_interest_filtered.xlsx', engine='xlsxwriter')
 
-sn.heatmap(filtered_corr, annot=False, cmap="coolwarm")
+sn.heatmap(filtered_corr, annot=False, cmap="coolwarm", linewidths=.5, linecolor='gray')
 plt.savefig('./heatmaps/nsch_2020_topical_data_of_interest.png')
