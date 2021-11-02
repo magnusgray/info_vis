@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sn
+
 plt.rcParams["figure.figsize"] = (20, 15)
 
 adult1_columns = ['a1_age', 'a1_sex', 'a1_employed', 'a1_grade', 'a1_menthealth', 'a1_physhealth', 'a1_marital', 'a1_relation']
@@ -18,6 +19,8 @@ all_selected_vars = adult1_columns + adult2_columns + gen_adult_info + gen_child
 all_adult_vars = adult1_columns + adult2_columns + gen_adult_info
 all_child_vars = gen_child_info + child_experiences + phys_health + ment_health + other_health
 all_child_health = phys_health + ment_health + other_health
+
+labels = ["Age of Adult 1", "Sex of Adult 1", "Employment Status of Adult 1", "Education of Adult 1", "Mental Health of Adult 1", "Physical Health of Adult 1", "Marital Status of Adult 1", "Relation of Adult 1 to Child", "Age of Adult 2", "Sex of Adult 2", "Employment Status of Adult 2", "Education of Adult 2", "Mental Health of Adult 2", "Physical Health of Adult 2", "Marital Status of Adult 2", "Relation of Adult 2 to Child", "Age of Child", "Birth Order of Child", "Race of Child", "Sex of Child", "Special Health Care Needs Status", "General Health", "Health Insurance Coverage", "Doctor Visit Within Past 12 Months", "Frequency of Preventative Doctor Visits", "Mental Health Profession Treatment Within Past 12 Months", "Amount of Screentime", "Experienced Difficulty to Cover Basics", "Experienced Divorce of Parent/Gaurdian Get", "Experienced Death of Parent/Gaurdian", "Experienced Having a Parent/Guardian in Jail", "Experienced Adults Hitting One Another at Home", "Experienced Violence as a Victim or Witness", "Lived With a Mentally Ill Individual", "Lived With a Drug/Alchohol Abuser", "Treated Unfairly Because of Race", "Treated Unfairly Because of Sexual Orientation or Gender Identity", "Bullied by Others", "Bullies Others", "Diagnosed with ADD/ADHD", "Currently has ADD/ADHD", "Severity of ADD/ADHD", "Medicated for ADD/ADHD", "Recieves Behavioral Treatment for ADD/ADHD", "Diagnosed with Anxiety", "Currently has Anxiety", "Severity of Anxiety", "Diagnosed with Autism", "Currently has Autism", "Severity of Autism", "Medicated for Autism", "Receives Behavioral Treatment for Autism", "Diagnosed with Behavior Problems", "Currently has Behavior Problems", "Severity of Behavior Problems", "Diagnosed with Depression", "Currently has Depression", "Severity of Depression", "Diagnosed with a Developmental Delay", "Currently has a Developmental Delay", "Severity of Developmental Delay", "Diagnosed with Down Syndrome", "Takes Emotion/Concentration/Behavior Medication", "Diagnosed with an Intellectual Disability", "Currently has an Intellectual Disability", "Severity of Intellectual Disability", "Diagnosed with a Learning Disability", "Currently has a Learning Disability", "Severity of Learning Disability", "Diagnosed with a Speech Disorder", "Currently has a Speech Disorder", "Severity of Speech Disorder", "Diagnosed with Tourette Syndrome", "Currently has Tourette Syndrome", "Severity of Tourette Syndrome"]
 
 ### Create Correlation Table of All 2020 Data
 #all_data = pd.read_csv('./data/nsch_2020_topical.csv')
@@ -73,10 +76,17 @@ corr = data_of_interest.corr()
 filtered_corr = corr[((corr >= .5) | (corr <= -.5)) & (corr !=1.000)]
 #filtered_corr.style.background_gradient(cmap='coolwarm').set_precision(4).to_excel('./corr_tables/nsch_2020_topical_data_of_interest_filtered.xlsx', engine='xlsxwriter')
 
-#sn.heatmap(filtered_corr, annot=False, cmap="coolwarm", linewidths=.5, linecolor='gray')
-#plt.title("Top Correlations Among Variables of Interest")
-#plt.savefig('./heatmaps/nsch_2020_topical_data_of_interest_filtered.png')
+sn.heatmap(filtered_corr, annot=False, cmap="coolwarm", linewidths=.5, linecolor='gray', xticklabels=labels, yticklabels=labels)
+plt.title("Top Correlations Among Variables of Interest")
+plt.savefig('./heatmaps/nsch_2020_topical_data_of_interest_filtered.png')
 
-sn.heatmap(corr, annot=False, cmap="coolwarm", linewidths=.5, linecolor='gray')
-plt.title("Correlations Among Variables of Interest")
-plt.savefig('./heatmaps/nsch_2020_topical_data_of_interest.png')
+#sn.heatmap(corr, annot=False, cmap="coolwarm", linewidths=.5, linecolor='gray', xticklabels=labels, yticklabels=labels)
+#plt.title("Correlations Among Variables of Interest")
+#plt.savefig('./heatmaps/nsch_2020_topical_data_of_interest.png')
+
+#mask = np.triu(np.ones_like(corr, dtype=np.bool))
+#mask = mask[1:, :-1]
+#corr = corr.iloc[1:,:-1].copy()
+#sn.heatmap(corr, mask=mask, annot=False, cmap="coolwarm", linewidths=.5, linecolor='gray', xticklabels=labels, yticklabels=labels)
+#plt.title("Correlations Among Variables of Interest")
+#plt.savefig('./heatmaps/nsch_2020_topical_data_of_interest_masked.png')

@@ -3,3 +3,5 @@ matplotlib
 Jinja2
 xlsxwriter
 seaborn
+plotly
+nbformat
