@@ -7,4 +7,5 @@ plotly
 nbformat
 sklearn
 statsmodels
-itertools
+#itertools
+ipympl
