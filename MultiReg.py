@@ -34,31 +34,65 @@ y1_lst = list(y1.columns)
 
 var_lsts = [y1_lst, x1_lst, x2_lst, x3_lst]
 
-combos = []
-for element in itertools.product(*var_lsts):
-    combos.append(element)
+def multi_reg(var_lists):
+    combos = []
+    for element in itertools.product(*var_lists):
+        combos.append(element)
+    res_lst = []
+    for combo in combos:
+        if len(combo) <= 1:
+            print("Combo too small")
+        elif len(combo) == 2:
+            y1 = combo[0]
+            Y = df[y1]
+            Y = Y.fillna(0)
+            
+            x1 = combo[1]
+            X = df[[x1]]
+            X = X.fillna(0)
 
-res_lst = []
-for combo in combos:
-    y1 = combo[0]
-    Y = df[y1]
-    Y = Y.fillna(0)
-    
-    x1 = combo[1]
-    x2 = combo[2]
-    x3 = combo[3]
-    X = df[[x1, x2, x3]]
-    X = X.fillna(0)
+            X = sm.add_constant(X) # adding a constant
+            model = sm.OLS(Y, X).fit()
+            corr = model.rsquared
 
-    #regr = linear_model.LinearRegression()
-    #regr.fit(X, Y)
+            result = ("Combo = ", str(combo), "R-Squared = ", corr)
+            res_lst.append(result)
+        elif len(combo) == 3:
+            y1 = combo[0]
+            Y = df[y1]
+            Y = Y.fillna(0)
+            
+            x1 = combo[1]
+            x2 = combo[2]
+            X = df[[x1, x2]]
+            X = X.fillna(0)
 
-    X = sm.add_constant(X) # adding a constant
-    model = sm.OLS(Y, X).fit()
-    corr = model.rsquared
+            X = sm.add_constant(X) # adding a constant
+            model = sm.OLS(Y, X).fit()
+            corr = model.rsquared
 
-    result = ("Combo = ", str(combo), "R-Squared = ", corr)
-    res_lst.append(result)
+            result = ("Combo = ", str(combo), "R-Squared = ", corr)
+            res_lst.append(result)
+        elif len(combo) == 4:
+            y1 = combo[0]
+            Y = df[y1]
+            Y = Y.fillna(0)
+            
+            x1 = combo[1]
+            x2 = combo[2]
+            x3 = combo[3]
+            X = df[[x1, x2, x3]]
+            X = X.fillna(0)
 
-top_res = sorted(res_lst, key=lambda x: x[3], reverse=True)[:20]
-print(top_res)
+            X = sm.add_constant(X) # adding a constant
+            model = sm.OLS(Y, X).fit()
+            corr = model.rsquared
+
+            result = ("Combo = ", str(combo), "R-Squared = ", corr)
+            res_lst.append(result)
+        else:
+            print("Combo too big")
+    top_res = sorted(res_lst, key=lambda x: x[3], reverse=True)[:5]
+    print(top_res)
+
+multi_reg(var_lsts)
