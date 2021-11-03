@@ -5,3 +5,6 @@ xlsxwriter
 seaborn
 plotly
 nbformat
+sklearn
+statsmodels
+itertools

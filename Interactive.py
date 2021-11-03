@@ -1,9 +1,5 @@
 import pandas as pd
 import plotly.express as px
-#import dash
-#import dash_core_components as dcc
-#import dash_html_components as html
-#from dash.dependencies import Input, Output
 
 adult1_columns = ['a1_age', 'a1_sex', 'a1_employed', 'a1_grade', 'a1_menthealth', 'a1_physhealth', 'a1_marital', 'a1_relation']
 adult2_columns = ['a2_age', 'a2_sex', 'a2_employed', 'a2_grade', 'a2_menthealth', 'a2_physhealth', 'a2_marital', 'a2_relation']
@@ -24,11 +20,8 @@ labels = ["Age of Adult 1", "Sex of Adult 1", "Employment Status of Adult 1", "E
 
 df = pd.read_csv('./data/nsch_2020_topical.csv')[columns_of_interest]
 corr = df.corr()
-fig = px.imshow(corr, 
-labels=dict(x="", y="", color="Correlation"),
-                x=labels,
-                y=labels
-)
+
+fig = px.imshow(corr, labels=dict(x="", y="", color="Correlation"), x=labels, y=labels)
 fig.update_layout(
     autosize=False,
     width=2000,
