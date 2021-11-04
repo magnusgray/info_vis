@@ -149,32 +149,34 @@ def graph_top_multi_reg(var_lists):
         X = df[[x1,x2]]
         X = X.fillna(0)
 
+        #"""
         ### Strat 1
-        #fig = plt.figure()
-        #ax = fig.add_subplot(111, projection='3d')
-        #ax.scatter(X1, X2, Y, marker='.', color='red')
-        #ax.set_xlabel(x1)
-        #ax.set_ylabel(x2)
-        #ax.set_zlabel(y1)
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+        ax.scatter(X1, X2, Y, marker='.', color='red')
+        ax.set_xlabel(x1)
+        ax.set_ylabel(x2)
+        ax.set_zlabel(y1)
         
-        #model = linear_model.LinearRegression()
-        #model.fit(X, Y)
-        #coefs = model.coef_
-        #intercept = model.intercept_
-        #xs = np.tile(np.arange(4), (4,1))
-        #ys = np.tile(np.arange(4), (4,1)).T
-        #zs = xs*coefs[0]+ys*coefs[1]+intercept
+        model = linear_model.LinearRegression()
+        model.fit(X, Y)
+        coefs = model.coef_
+        intercept = model.intercept_
+        xs = np.tile(np.arange(4), (4,1))
+        ys = np.tile(np.arange(4), (4,1)).T
+        zs = xs*coefs[0]+ys*coefs[1]+intercept
 
-        #ax.plot_surface(xs,ys,zs, alpha=0.5)
-        #plt.show()
+        ax.plot_surface(xs,ys,zs, alpha=0.5)
+        plt.show()
+        #"""
 
-
+        """ 
         ### Strat 2
         fig = plt.figure()
         ax1 = fig.add_subplot(131, projection='3d')
 
-        x1_pred = np.linspace(0, 3, 50)    
-        x2_pred = np.linspace(0, 3, 50) 
+        x1_pred = np.linspace(0, 3, 20)    
+        x2_pred = np.linspace(0, 3, 20) 
         xx1_pred, xx2_pred = np.meshgrid(x1_pred, x2_pred)
         model_viz = np.array([xx1_pred.flatten(), xx2_pred.flatten()]).T
         ols = linear_model.LinearRegression()
@@ -195,6 +197,7 @@ def graph_top_multi_reg(var_lists):
         fig.suptitle('$R^2 = %.2f$' % r2, fontsize=20)
 
         fig.show()
+        """
 
     elif len(top_combo) >= 4:
         print("Combo too big for graphing")
