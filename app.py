@@ -3,6 +3,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.express as px
+import numpy as np
 import pandas as pd
 
 import pandas as pd
@@ -26,26 +27,36 @@ all_child_health = phys_health + ment_health + other_health
 labels = ["Age of Adult 1", "Sex of Adult 1", "Employment Status of Adult 1", "Education of Adult 1", "Mental Health of Adult 1", "Physical Health of Adult 1", "Marital Status of Adult 1", "Relation of Adult 1 to Child", "Age of Adult 2", "Sex of Adult 2", "Employment Status of Adult 2", "Education of Adult 2", "Mental Health of Adult 2", "Physical Health of Adult 2", "Marital Status of Adult 2", "Relation of Adult 2 to Child", "Age of Child", "Birth Order of Child", "Race of Child", "Sex of Child", "Special Health Care Needs Status", "General Health", "Health Insurance Coverage", "Doctor Visit Within Past 12 Months", "Frequency of Preventative Doctor Visits", "Mental Health Profession Treatment Within Past 12 Months", "Amount of Screentime", "Experienced Difficulty to Cover Basics", "Experienced Divorce of Parent/Gaurdian Get", "Experienced Death of Parent/Gaurdian", "Experienced Having a Parent/Guardian in Jail", "Experienced Adults Hitting One Another at Home", "Experienced Violence as a Victim or Witness", "Lived With a Mentally Ill Individual", "Lived With a Drug/Alchohol Abuser", "Treated Unfairly Because of Race", "Treated Unfairly Because of Sexual Orientation or Gender Identity", "Bullied by Others", "Bullies Others", "Diagnosed with ADD/ADHD", "Currently has ADD/ADHD", "Severity of ADD/ADHD", "Medicated for ADD/ADHD", "Recieves Behavioral Treatment for ADD/ADHD", "Diagnosed with Anxiety", "Currently has Anxiety", "Severity of Anxiety", "Diagnosed with Autism", "Currently has Autism", "Severity of Autism", "Medicated for Autism", "Receives Behavioral Treatment for Autism", "Diagnosed with Behavior Problems", "Currently has Behavior Problems", "Severity of Behavior Problems", "Diagnosed with Depression", "Currently has Depression", "Severity of Depression", "Diagnosed with a Developmental Delay", "Currently has a Developmental Delay", "Severity of Developmental Delay", "Diagnosed with Down Syndrome", "Takes Emotion/Concentration/Behavior Medication", "Diagnosed with an Intellectual Disability", "Currently has an Intellectual Disability", "Severity of Intellectual Disability", "Diagnosed with a Learning Disability", "Currently has a Learning Disability", "Severity of Learning Disability", "Diagnosed with a Speech Disorder", "Currently has a Speech Disorder", "Severity of Speech Disorder", "Diagnosed with Tourette Syndrome", "Currently has Tourette Syndrome", "Severity of Tourette Syndrome"]
 
 df = pd.read_csv('./data/nsch_2020_topical.csv')[columns_of_interest]
-corr = df.corr()
+df.columns = labels
+data = df
+corr = data.corr()
+#mask = np.triu(np.ones_like(corr, dtype=bool))
+#corr = corr.mask(mask)
 
 app = dash.Dash(__name__)
 
 app.layout = html.Div([
     html.P("Variables Included:"),
     dcc.Checklist(
-        id='medals',
+        id='variables',
         options=[{'label': x, 'value': x} 
-                 for x in df.columns],
-        value=df.columns.tolist(),
+                 for x in labels],
+        value=corr.columns.tolist(),
+        labelStyle={'display': 'block'}
     ),
     dcc.Graph(id="graph"),
 ])
 
 @app.callback(
     Output("graph", "figure"), 
-    [Input("medals", "value")])
-def filter_heatmap(cols):
-    fig = px.imshow(df[cols])
+    Input("variables", "value")
+)
+
+def update_figure(vars):
+    df = data[vars]
+    new_corr = df.corr()
+    fig = px.imshow(new_corr, labels=dict(x="", y="", color="Correlation"), x=new_corr.columns, y=new_corr.columns, color_continuous_scale="RdBu_r", zmin=-1, zmax=1)
+    fig.update_layout(autosize=True, height=1750, width=1750)
     return fig
 
 if __name__ == '__main__':
