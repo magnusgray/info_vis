@@ -1,3 +1,4 @@
+-f https://download.pytorch.org/whl/torch_stable.html
 argon2-cffi==21.1.0
 attrs==21.2.0
 backcall==0.2.0
@@ -85,7 +86,8 @@ tenacity==8.0.1
 terminado==0.12.1
 testpath==0.5.0
 threadpoolctl==3.0.0
-#torch==1.10.0
+torch==1.8.1+cpu 
+torchvision==0.9.1+cpu
 tornado==6.1
 tqdm==4.62.3
 traitlets==5.1.1
