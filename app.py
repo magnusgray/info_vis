@@ -1,7 +1,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 import plotly.express as px
 import numpy as np
 import pandas as pd
@@ -38,10 +38,17 @@ app = dash.Dash(__name__)
 app.layout = html.Div([
     html.P("Variables Included:"),
     dcc.Checklist(
+        id="all-or-none",
+        options=[{"label": "Select All", "value": "All"}],
+        value=[],
+        labelStyle={"display": "inline-block"},
+    ),
+    html.P(""),
+    dcc.Checklist(
         id='variables',
         options=[{'label': x, 'value': x} 
                  for x in labels],
-        value=corr.columns.tolist(),
+        value=[],
         labelStyle={'display': 'block'}
     ),
     dcc.Graph(id="graph"),
@@ -51,13 +58,23 @@ app.layout = html.Div([
     Output("graph", "figure"), 
     Input("variables", "value")
 )
-
 def update_figure(vars):
     df = data[vars]
     new_corr = df.corr()
     fig = px.imshow(new_corr, labels=dict(x="", y="", color="Correlation"), x=new_corr.columns, y=new_corr.columns, color_continuous_scale="RdBu_r", zmin=-1, zmax=1)
     fig.update_layout(autosize=True, height=1750, width=1750)
     return fig
+
+@app.callback(
+    Output("variables", "value"),
+    [Input("all-or-none", "value")],
+    [State("variables", "options")],
+)
+def select_all_none(all_selected, options):
+    all_or_none = []
+    all_or_none = [option["value"] for option in options if all_selected]
+    return all_or_none
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)

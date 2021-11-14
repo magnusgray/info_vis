@@ -4,7 +4,7 @@ backcall==0.2.0
 bleach==4.1.0
 Brotli==1.0.9
 CausalInference==0.1.3
-causalnex==0.10.0
+#causalnex==0.10.0
 cffi==1.15.0
 click==8.0.3
 cycler==0.10.0
