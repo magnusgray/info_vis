@@ -29,6 +29,7 @@ labels = ["Age of Adult 1", "Sex of Adult 1", "Employment Status of Adult 1", "E
 df = pd.read_csv('./data/nsch_2020_topical.csv')[columns_of_interest]
 df.columns = labels
 data = df
+#data = data.fillna(0)
 corr = data.corr()
 #mask = np.triu(np.ones_like(corr, dtype=bool))
 #corr = corr.mask(mask)
@@ -38,7 +39,11 @@ app = dash.Dash(__name__)
 server = app.server
 
 app.layout = html.Div([
-    html.P("Variables Included:"),
+    html.H1("National Survey of Children's Health"),
+    html.H2(""),
+    html.H2("Correlation Visualization Tool"),
+    html.H2(""),
+    html.H3("Please select varibles to be compared."),
     dcc.Checklist(
         id="all-or-none",
         options=[{"label": "Select All", "value": "All"}],
@@ -46,14 +51,18 @@ app.layout = html.Div([
         labelStyle={"display": "inline-block"},
     ),
     html.P(""),
-    dcc.Checklist(
+    dcc.Dropdown(
         id='variables',
         options=[{'label': x, 'value': x} 
                  for x in labels],
         value=[],
-        labelStyle={'display': 'block'}
+        multi=True
     ),
-    dcc.Graph(id="graph"),
+    html.H1(""),
+    html.Div(children=[
+        dcc.Graph(id="graph", style={'display': 'inline-block'}),
+        dcc.Graph(id="scatter", style={'display': 'inline-block'}),
+    ], style={'width': '100%', 'display': 'inline-block'})
 ])
 
 @app.callback(
@@ -64,7 +73,23 @@ def update_figure(vars):
     df = data[vars]
     new_corr = df.corr()
     fig = px.imshow(new_corr, labels=dict(x="", y="", color="Correlation"), x=new_corr.columns, y=new_corr.columns, color_continuous_scale="RdBu_r", zmin=-1, zmax=1)
-    fig.update_layout(autosize=True, height=1750, width=1750)
+    fig['layout']['xaxis']['side'] = 'top'
+    fig.update_layout(autosize=True, height=1250, width=1250)
+    return fig
+
+@app.callback(
+    Output("scatter", "figure"), 
+    Input("graph", "hoverData"),
+    Input("variables", "value"),
+)
+def update_scatter(hov_data, vars):
+    df = data[vars]
+    x_value = hov_data['points'][0]['x']
+    y_value = hov_data['points'][0]['y']
+    fig = px.scatter(df, x=x_value, y=y_value, trendline="ols", trendline_color_override="red")
+    fig.update_layout(xaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
+    fig.update_layout(yaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
+    fig.update_layout(autosize=True, height=750, width=750)
     return fig
 
 @app.callback(
