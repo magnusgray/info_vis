@@ -59,6 +59,8 @@ app.layout = html.Div([
         multi=True
     ),
     html.H1(""),
+    html.H3("Once generated, click on any square in the heatmap to see the variable pair's scatterplot."),
+    html.H1(""),
     html.Div(children=[
         dcc.Graph(id="graph", style={'display': 'inline-block'}),
         dcc.Graph(id="scatter", style={'display': 'inline-block'}),
@@ -67,7 +69,7 @@ app.layout = html.Div([
 
 @app.callback(
     Output("graph", "figure"), 
-    Input("variables", "value")
+    Input("variables", "value"),
 )
 def update_figure(vars):
     df = data[vars]
@@ -79,18 +81,29 @@ def update_figure(vars):
 
 @app.callback(
     Output("scatter", "figure"), 
-    Input("graph", "hoverData"),
+    Input("graph", "clickData"),
     Input("variables", "value"),
 )
-def update_scatter(hov_data, vars):
+def update_scatter(click_data, vars):
     df = data[vars]
-    x_value = hov_data['points'][0]['x']
-    y_value = hov_data['points'][0]['y']
-    fig = px.scatter(df, x=x_value, y=y_value, trendline="ols", trendline_color_override="red")
-    fig.update_layout(xaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
-    fig.update_layout(yaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
-    fig.update_layout(autosize=True, height=750, width=750)
-    return fig
+    x_value = str(click_data['points'][0]['x'])
+    y_value = str(click_data['points'][0]['y'])
+    if x_value == y_value:
+        fig = px.scatter(df, x=x_value, y=y_value, trendline="ols", trendline_color_override="red")
+        fig.update_layout(xaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
+        fig.update_layout(yaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
+        fig.update_layout(autosize=True, height=750, width=750)
+        return fig
+    else:
+        df = df[[x_value, y_value]].copy()
+        df['combo'] = df[x_value].astype(str) + df[y_value].astype(str)
+        df['frequency'] = df['combo'].map(df['combo'].value_counts())
+        freq = df['frequency'].tolist()
+        fig = px.scatter(df, x=x_value, y=y_value, trendline="ols", trendline_color_override="red", size=freq)
+        fig.update_layout(xaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
+        fig.update_layout(yaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
+        fig.update_layout(autosize=True, height=750, width=750)
+        return fig
 
 @app.callback(
     Output("variables", "value"),
