@@ -67,6 +67,7 @@ app.layout = html.Div([
         dcc.Graph(id="graph", style={'display': 'inline-block'}),
         dcc.Graph(id="scatter", style={'display': 'inline-block'}),
     ], style={'width': '100%', 'display': 'inline-block'}),
+    html.H1(""),
     html.H2("Node Link Visualization Tool"),
     html.H2(""),
     html.H3("Please select varibles to include in the diagram."),
@@ -85,9 +86,17 @@ app.layout = html.Div([
         multi=True
     ),
     html.P(""),
-    html.H3("Please select correlation strength."),
-    html.P("If a negative value is selected, correlations less than or equal to that value will be shown."),
-    html.P("Otherwise, if a positive value is selected, correlations greater than or equal to that value will be shown."),
+    html.H3("Please select correlation strength and whether correlations greater than or less than the correlation strength are displayed."),
+    html.H1(""),
+    dcc.RadioItems(
+        id='greater_less',
+        options=[
+            {'label': 'Greater Than', 'value': 0},
+            {'label': 'Less Than', 'value': 1}
+        ],
+        value = 0,
+        labelStyle={'display': 'flex'}
+    ),
     html.H1(""),
     dcc.Slider(
         id="corr_strength",
@@ -105,7 +114,11 @@ app.layout = html.Div([
         tooltip={"placement": "bottom", "always_visible": True},
     ),
     html.H1(""),
-    html.Img(id="node_link")
+    html.Img(id="node_link"),
+    #html.H1(""),
+    #html.H2("Causal Visualization Tool"),
+    #html.H2(""),
+    #html.H3("Please select varibles to include in the diagram."),
 ])
 
 @app.callback(
@@ -149,9 +162,10 @@ def update_scatter(click_data, vars):
 @app.callback(
     Output("node_link", "src"), 
     Input("variables2", "value"),
-    Input("corr_strength", "value")
+    Input("corr_strength", "value"),
+    Input('greater_less', 'value'),
 )
-def update_node_link(vars, corr_strength):
+def update_node_link(vars, corr_strength, greater_less):
     df = data[vars]
     new_corr = df.corr()
     
@@ -160,10 +174,10 @@ def update_node_link(vars, corr_strength):
     links = new_corr.stack().reset_index()
     links.columns = ['var1', 'var2', 'value']
     
-    if corr_strength < 0:
-        links_filtered=links.loc[ (links['value'] <= corr_strength) & (links['var1'] != links['var2']) ]
-    elif corr_strength >= 0:
+    if greater_less == 0:
         links_filtered=links.loc[ (links['value'] >= corr_strength) & (links['var1'] != links['var2']) ]
+    elif greater_less == 1:
+        links_filtered=links.loc[ (links['value'] <= corr_strength) & (links['var1'] != links['var2']) ]
 
     G = nx.from_pandas_edgelist(links_filtered, 'var1', 'var2', edge_attr=True)
 
