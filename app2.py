@@ -3,7 +3,8 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import plotly.express as px
-from plotly.tools import mpl_to_plotly
+import plotly.graph_objects as go
+from sklearn.svm import SVR
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -128,10 +129,28 @@ app.layout = html.Div([
     ),
     html.H1(""),
     html.Img(id="node_link"),
-    #html.H1(""),
-    #html.H2("Causal Visualization Tool"),
-    #html.H2(""),
-    #html.H3("Please select varibles to include in the diagram."),
+    html.H1(""),
+    html.H2("Multiple Regression Visualization Tool"),
+    html.H2(""),
+    html.H3("Please select three varibles to include in the multiple regression analysis."),
+    dcc.Dropdown(
+        id='x_axis',
+        options=[{'label': x, 'value': x} for x in labels2],
+        value = "Medicated for Autism"
+    ),
+    dcc.Dropdown(
+        id='y_axis',
+        options=[{'label': x, 'value': x} for x in labels2],
+        value = 'Receives Behavioral Treatment for Autism'
+    ),
+    dcc.Dropdown(
+        id='z_axis',
+        options=[{'label': x, 'value': x} for x in labels2],
+        value = 'Severity of Autism'
+    ),
+    html.H1(""),
+    dcc.Graph(id="multi_reg"),
+    html.H1(""),
 ])
 
 @app.callback(
@@ -159,7 +178,7 @@ def update_scatter(click_data, vars):
         fig = px.scatter(df, x=x_value, y=y_value, trendline="ols", trendline_color_override="red")
         fig.update_layout(xaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
         fig.update_layout(yaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
-        fig.update_layout(autosize=True, height=750, width=750)
+        fig.update_layout(autosize=True, height=1000, width=1000)
         return fig
     else:
         df = df[[x_value, y_value]].copy()
@@ -169,7 +188,7 @@ def update_scatter(click_data, vars):
         fig = px.scatter(df, x=x_value, y=y_value, trendline="ols", trendline_color_override="red", size=freq)
         fig.update_layout(xaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
         fig.update_layout(yaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
-        fig.update_layout(autosize=True, height=750, width=750)
+        fig.update_layout(autosize=True, height=1000, width=1000)
         return fig
 
 @app.callback(
@@ -203,8 +222,44 @@ def update_node_link(vars, corr_strength, greater_less):
     img_data = base64.b64encode(buf.getbuffer()).decode("utf8") # encode to html elements
     return "data:image/png;base64,{}".format(img_data)
 
-    #plotly_fig = mpl_to_plotly(fig)
-    #return plotly_fig
+@app.callback(
+    Output("multi_reg", "figure"),
+    Input("x_axis", "value"),
+    Input("y_axis", "value"),
+    Input("z_axis", "value")
+)
+def update_multi_reg(x_var, y_var, z_var):
+    mesh_size = .02
+    margin = 0
+
+    df = pd.read_csv('./data/nsch_2020_topical.csv')[columns_of_interest2]
+    df.columns = labels2
+    df = df.fillna(0)
+
+    X = df[[x_var, y_var]]
+    y = df[[z_var]]
+
+    model = SVR(C=1.)
+    model.fit(X, y)
+
+    x_min, x_max = X.iloc[:, 0].min() - margin, X.iloc[:, 0].max() + margin
+    y_min, y_max = X.iloc[:, 1].min() - margin, X.iloc[:, 1].max() + margin
+    xrange = np.arange(x_min, x_max, mesh_size)
+    yrange = np.arange(y_min, y_max, mesh_size)
+    xx, yy = np.meshgrid(xrange, yrange)
+
+    pred = model.predict(np.c_[xx.ravel(), yy.ravel()])
+    pred = pred.reshape(xx.shape)
+
+    df2 = df[[x_var, y_var, z_var]].copy()
+    df2['combo'] = df2[x_var].astype(str) + df2[y_var].astype(str) + + df2[z_var].astype(str)
+    df2['frequency'] = df2['combo'].map(df2['combo'].value_counts())
+    freq = df2['frequency'].tolist()
+
+    fig = px.scatter_3d(df, x=str(X.columns[0]), y=str(X.columns[1]), z=str(y.columns[0]), hover_data={x_var: True, y_var: True, z_var: True, "Frequency": freq})
+    fig.add_traces(go.Surface(x=xrange, y=yrange, z=pred, name='pred_surface'))
+    fig.update_layout(autosize=True, height=1000, width=1250)
+    return fig
 
 @app.callback(
     Output("variables", "value"),
@@ -219,10 +274,6 @@ def select_vars(all_selected, options):
         selected_vars = ["Diagnosed with ADD/ADHD", "Currently has ADD/ADHD", "Severity of ADD/ADHD", "Medicated for ADD/ADHD", "Recieves Behavioral Treatment for ADD/ADHD", "Diagnosed with Anxiety", "Currently has Anxiety", "Severity of Anxiety", "Diagnosed with Autism", "Currently has Autism", "Severity of Autism", "Medicated for Autism", "Receives Behavioral Treatment for Autism", "Diagnosed with Behavior Problems", "Currently has Behavior Problems", "Severity of Behavior Problems", "Diagnosed with Depression", "Currently has Depression", "Severity of Depression", "Diagnosed with a Developmental Delay", "Currently has a Developmental Delay", "Severity of Developmental Delay", "Diagnosed with Down Syndrome", "Takes Emotion/Concentration/Behavior Medication", "Diagnosed with an Intellectual Disability", "Currently has an Intellectual Disability", "Severity of Intellectual Disability", "Diagnosed with a Learning Disability", "Currently has a Learning Disability", "Severity of Learning Disability", "Diagnosed with a Speech Disorder", "Currently has a Speech Disorder", "Severity of Speech Disorder", "Diagnosed with Tourette Syndrome", "Currently has Tourette Syndrome", "Severity of Tourette Syndrome"]
     return selected_vars
     
-    #all_or_none = []
-    #all_or_none = [option["value"] for option in options if all_selected]
-    #return all_or_none
-
 @app.callback(
     Output("variables2", "value"),
     [Input("all-or-none2", "value")],
