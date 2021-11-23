@@ -3,11 +3,13 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import plotly.express as px
+from plotly.tools import mpl_to_plotly
 import numpy as np
 import pandas as pd
-
-import pandas as pd
-import plotly.express as px
+import matplotlib.pyplot as plt
+import networkx as nx
+import io
+import base64
 
 adult1_columns = ['a1_age', 'a1_sex', 'a1_employed', 'a1_grade', 'a1_menthealth', 'a1_physhealth', 'a1_marital', 'a1_relation']
 adult2_columns = ['a2_age', 'a2_sex', 'a2_employed', 'a2_grade', 'a2_menthealth', 'a2_physhealth', 'a2_marital', 'a2_relation']
@@ -55,7 +57,7 @@ app.layout = html.Div([
         id='variables',
         options=[{'label': x, 'value': x} 
                  for x in labels],
-        value=[],
+        value=["Diagnosed with ADD/ADHD", "Currently has ADD/ADHD", "Severity of ADD/ADHD", "Medicated for ADD/ADHD", "Recieves Behavioral Treatment for ADD/ADHD", "Diagnosed with Anxiety", "Currently has Anxiety", "Severity of Anxiety", "Diagnosed with Autism", "Currently has Autism", "Severity of Autism", "Medicated for Autism", "Receives Behavioral Treatment for Autism", "Diagnosed with Behavior Problems", "Currently has Behavior Problems", "Severity of Behavior Problems", "Diagnosed with Depression", "Currently has Depression", "Severity of Depression", "Diagnosed with a Developmental Delay", "Currently has a Developmental Delay", "Severity of Developmental Delay", "Diagnosed with Down Syndrome", "Takes Emotion/Concentration/Behavior Medication", "Diagnosed with an Intellectual Disability", "Currently has an Intellectual Disability", "Severity of Intellectual Disability", "Diagnosed with a Learning Disability", "Currently has a Learning Disability", "Severity of Learning Disability", "Diagnosed with a Speech Disorder", "Currently has a Speech Disorder", "Severity of Speech Disorder", "Diagnosed with Tourette Syndrome", "Currently has Tourette Syndrome", "Severity of Tourette Syndrome"],
         multi=True
     ),
     html.H1(""),
@@ -64,7 +66,46 @@ app.layout = html.Div([
     html.Div(children=[
         dcc.Graph(id="graph", style={'display': 'inline-block'}),
         dcc.Graph(id="scatter", style={'display': 'inline-block'}),
-    ], style={'width': '100%', 'display': 'inline-block'})
+    ], style={'width': '100%', 'display': 'inline-block'}),
+    html.H2("Node Link Visualization Tool"),
+    html.H2(""),
+    html.H3("Please select varibles to include in the diagram."),
+    dcc.Checklist(
+        id="all-or-none2",
+        options=[{"label": "Select All", "value": "All"}],
+        value=[],
+        labelStyle={"display": "inline-block"},
+    ),
+    html.P(""),
+    dcc.Dropdown(
+        id='variables2',
+        options=[{'label': x, 'value': x} 
+                 for x in labels],
+        value=["Diagnosed with ADD/ADHD", "Currently has ADD/ADHD", "Severity of ADD/ADHD", "Medicated for ADD/ADHD", "Recieves Behavioral Treatment for ADD/ADHD", "Diagnosed with Anxiety", "Currently has Anxiety", "Severity of Anxiety", "Diagnosed with Autism", "Currently has Autism", "Severity of Autism", "Medicated for Autism", "Receives Behavioral Treatment for Autism", "Diagnosed with Behavior Problems", "Currently has Behavior Problems", "Severity of Behavior Problems", "Diagnosed with Depression", "Currently has Depression", "Severity of Depression", "Diagnosed with a Developmental Delay", "Currently has a Developmental Delay", "Severity of Developmental Delay", "Diagnosed with Down Syndrome", "Takes Emotion/Concentration/Behavior Medication", "Diagnosed with an Intellectual Disability", "Currently has an Intellectual Disability", "Severity of Intellectual Disability", "Diagnosed with a Learning Disability", "Currently has a Learning Disability", "Severity of Learning Disability", "Diagnosed with a Speech Disorder", "Currently has a Speech Disorder", "Severity of Speech Disorder", "Diagnosed with Tourette Syndrome", "Currently has Tourette Syndrome", "Severity of Tourette Syndrome"],
+        multi=True
+    ),
+    html.P(""),
+    html.H3("Please select correlation strength."),
+    html.P("If a negative value is selected, correlations less than or equal to that value will be shown."),
+    html.P("Otherwise, if a positive value is selected, correlations greater than or equal to that value will be shown."),
+    html.H1(""),
+    dcc.Slider(
+        id="corr_strength",
+        min=-1,
+        max=1,
+        step=.1,
+        marks={
+        -1: '-1',
+        -0.5: '-0.5',
+        0: '0',
+        0.5: '0.5',
+        1: '1'
+        },
+        value=.5,
+        tooltip={"placement": "bottom", "always_visible": True},
+    ),
+    html.H1(""),
+    html.Img(id="node_link")
 ])
 
 @app.callback(
@@ -106,15 +147,67 @@ def update_scatter(click_data, vars):
         return fig
 
 @app.callback(
+    Output("node_link", "src"), 
+    Input("variables2", "value"),
+    Input("corr_strength", "value")
+)
+def update_node_link(vars, corr_strength):
+    df = data[vars]
+    new_corr = df.corr()
+    
+    buf = io.BytesIO() # in-memory files
+
+    links = new_corr.stack().reset_index()
+    links.columns = ['var1', 'var2', 'value']
+    
+    if corr_strength < 0:
+        links_filtered=links.loc[ (links['value'] <= corr_strength) & (links['var1'] != links['var2']) ]
+    elif corr_strength >= 0:
+        links_filtered=links.loc[ (links['value'] >= corr_strength) & (links['var1'] != links['var2']) ]
+
+    G = nx.from_pandas_edgelist(links_filtered, 'var1', 'var2', edge_attr=True)
+
+    fig = plt.figure("Node Link Diagram with Selected Variables",figsize=(12,8)) 
+    pos = nx.spring_layout(G, k=0.20, iterations=20)
+    nx.draw(G, pos, with_labels=True, node_color='orange', node_size=600, edge_color='black', linewidths=1, font_size=10)
+    
+    plt.savefig(buf, format = "png") # save to the above file object
+    plt.close()
+    img_data = base64.b64encode(buf.getbuffer()).decode("utf8") # encode to html elements
+    return "data:image/png;base64,{}".format(img_data)
+
+    #plotly_fig = mpl_to_plotly(fig)
+    #return plotly_fig
+
+@app.callback(
     Output("variables", "value"),
     [Input("all-or-none", "value")],
     [State("variables", "options")],
 )
-def select_all_none(all_selected, options):
-    all_or_none = []
-    all_or_none = [option["value"] for option in options if all_selected]
-    return all_or_none
+def select_vars(all_selected, options):
+    selected_vars = []
+    if all_selected:
+        selected_vars = [option["value"] for option in options]
+    else:
+        selected_vars = ["Diagnosed with ADD/ADHD", "Currently has ADD/ADHD", "Severity of ADD/ADHD", "Medicated for ADD/ADHD", "Recieves Behavioral Treatment for ADD/ADHD", "Diagnosed with Anxiety", "Currently has Anxiety", "Severity of Anxiety", "Diagnosed with Autism", "Currently has Autism", "Severity of Autism", "Medicated for Autism", "Receives Behavioral Treatment for Autism", "Diagnosed with Behavior Problems", "Currently has Behavior Problems", "Severity of Behavior Problems", "Diagnosed with Depression", "Currently has Depression", "Severity of Depression", "Diagnosed with a Developmental Delay", "Currently has a Developmental Delay", "Severity of Developmental Delay", "Diagnosed with Down Syndrome", "Takes Emotion/Concentration/Behavior Medication", "Diagnosed with an Intellectual Disability", "Currently has an Intellectual Disability", "Severity of Intellectual Disability", "Diagnosed with a Learning Disability", "Currently has a Learning Disability", "Severity of Learning Disability", "Diagnosed with a Speech Disorder", "Currently has a Speech Disorder", "Severity of Speech Disorder", "Diagnosed with Tourette Syndrome", "Currently has Tourette Syndrome", "Severity of Tourette Syndrome"]
+    return selected_vars
+    
+    #all_or_none = []
+    #all_or_none = [option["value"] for option in options if all_selected]
+    #return all_or_none
 
+@app.callback(
+    Output("variables2", "value"),
+    [Input("all-or-none2", "value")],
+    [State("variables2", "options")],
+)
+def select_vars2(all_selected, options):
+    selected_vars = []
+    if all_selected:
+        selected_vars = [option["value"] for option in options]
+    else:
+        selected_vars = ["Diagnosed with ADD/ADHD", "Currently has ADD/ADHD", "Severity of ADD/ADHD", "Medicated for ADD/ADHD", "Recieves Behavioral Treatment for ADD/ADHD", "Diagnosed with Anxiety", "Currently has Anxiety", "Severity of Anxiety", "Diagnosed with Autism", "Currently has Autism", "Severity of Autism", "Medicated for Autism", "Receives Behavioral Treatment for Autism", "Diagnosed with Behavior Problems", "Currently has Behavior Problems", "Severity of Behavior Problems", "Diagnosed with Depression", "Currently has Depression", "Severity of Depression", "Diagnosed with a Developmental Delay", "Currently has a Developmental Delay", "Severity of Developmental Delay", "Diagnosed with Down Syndrome", "Takes Emotion/Concentration/Behavior Medication", "Diagnosed with an Intellectual Disability", "Currently has an Intellectual Disability", "Severity of Intellectual Disability", "Diagnosed with a Learning Disability", "Currently has a Learning Disability", "Severity of Learning Disability", "Diagnosed with a Speech Disorder", "Currently has a Speech Disorder", "Severity of Speech Disorder", "Diagnosed with Tourette Syndrome", "Currently has Tourette Syndrome", "Severity of Tourette Syndrome"]
+    return selected_vars
 
 if __name__ == '__main__':
     app.run_server(debug=True)
