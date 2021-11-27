@@ -154,8 +154,9 @@ app.layout = html.Div([
     html.H1(""),
     dcc.Graph(id="multi_reg"),
     html.H1(""),
-    
-    """ ### Removed for taking too long
+])
+
+""" ### Removed for taking too long
     html.H2("Multiple Regression Visualization Tool 2"),
     html.H2(""),
     html.H3("Please select a list of at least three vaiables to include in the multiple regression analysis."),
@@ -175,8 +176,7 @@ app.layout = html.Div([
     ),
     dcc.Graph(id="multi_reg2"),
     html.H1(""),
-    """
-])
+"""
 
 ### Makes heatmap based on selected variables
 
