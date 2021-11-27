@@ -32,7 +32,7 @@ corr = data.corr()
 links = corr.stack().reset_index()
 links.columns = ['var1', 'var2', 'value']
  
-links_filtered=links.loc[ (abs(links['value']) > 0.4) & (links['var1'] != links['var2']) ]
+links_filtered=links.loc[ (abs(links['value']) > 0.5) & (links['var1'] != links['var2']) ]
  
 G = nx.from_pandas_edgelist(links_filtered, 'var1', 'var2', edge_attr=True)
 
