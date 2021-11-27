@@ -79,6 +79,61 @@ app.layout = html.Div([
         multi=True
     ),
     html.H1(""),
+    html.H3("Please select any desired filters."),
+    html.H1(""),
+    html.H4("Age:"),
+    dcc.Dropdown(
+        id='age_filter',
+        options=[
+            {'label': 'All', 'value': -1},
+            {'label': '0', 'value': 0},
+            {'label': '1', 'value': 1},
+            {'label': '2', 'value': 2},
+            {'label': '3', 'value': 3},
+            {'label': '4', 'value': 4},
+            {'label': '5', 'value': 5},
+            {'label': '6', 'value': 6},
+            {'label': '7', 'value': 7},
+            {'label': '8', 'value': 8},
+            {'label': '9', 'value': 9},
+            {'label': '10', 'value': 10},
+            {'label': '11', 'value': 11},
+            {'label': '12', 'value': 12},
+            {'label': '13', 'value': 13},
+            {'label': '14', 'value': 14},
+            {'label': '15', 'value': 15},
+            {'label': '16', 'value': 16},
+            {'label': '17', 'value': 17},
+            ],
+        value = -1
+    ),
+    html.H1(""),
+    html.H4("Race:"),
+    dcc.Dropdown(
+        id='race_filter',
+        options=[
+            {'label': 'All', 'value': -1},
+            {'label': 'White', 'value': 1},
+            {'label': 'Black or African American', 'value': 2},
+            {'label': 'American Indian or Alaska Native', 'value': 3},
+            {'label': 'Asian', 'value': 4},
+            {'label': 'Native Hawaiian or Other Pacific Islander', 'value': 5},
+            {'label': 'Two or More Races', 'value': 7},
+        ],
+        value = -1
+    ),
+    html.H1(""),
+    html.H4("Sex:"),
+    dcc.Dropdown(
+        id='sex_filter',
+        options=[
+            {'label': 'All', 'value': -1},
+            {'label': 'Male', 'value': 1},
+            {'label': 'Female', 'value': 2},
+        ],
+        value = -1
+    ),
+    html.H1(""),
     html.H3("Once generated, click on any square in the heatmap to see the variable pair's scatterplot."),
     html.H1(""),
     html.Div(children=[
@@ -183,14 +238,39 @@ app.layout = html.Div([
 @app.callback(
     Output("graph", "figure"), 
     Input("variables", "value"),
+    Input("age_filter", "value"),
+    Input("race_filter", "value"), 
+    Input("sex_filter", "value"),
 )
-def update_figure(vars):
-    df = data2[vars]
+def update_figure(vars, age, race, sex):
+    if age == -1 and race == -1 and sex == -1:
+        df = data2[vars]
+    elif age == -1 and race == -1 and sex != -1:
+        df = data2[data2["Sex of Child"] == sex]
+        df = df[vars]
+    elif age == -1 and sex == -1 and race != -1:
+        df = data2[data2["Race of Child"] == race]
+        df = df[vars]
+    elif race == -1 and sex == -1 and age != -1:        
+        df = data2[data2["Age of Child"] == age]
+        df = df[vars]
+    elif age == -1 and race != -1 and sex != -1:
+        df = data2[(data2["Race of Child"] == race) & (data2["Sex of Child"] == sex)]
+        df = df[vars]
+    elif race == -1 and age != -1 and sex != -1:
+        df = data2[(data2["Age of Child"] == age) & (data2["Sex of Child"] == sex)]
+        df = df[vars]
+    elif sex == -1 and age != -1 and race != -1:
+        df = data2[(data2["Age of Child"] == age) & (data2["Race of Child"] == race)]
+        df = df[vars]
+    elif age != -1 and race != -1 and sex != -1:
+        df = data2[(data2["Age of Child"] == age) & (data2["Race of Child"] == race) & (data2["Sex of Child"] == sex)]
+        df = df[vars]
     new_corr = df.corr()
     fig = px.imshow(new_corr, labels=dict(x="", y="", color="Correlation"), x=new_corr.columns, y=new_corr.columns, color_continuous_scale="RdBu_r", zmin=-1, zmax=1)
     fig['layout']['xaxis']['side'] = 'top'
     fig.update_layout(autosize=True, height=1250, width=1250)
-    return fig
+    return fig    
 
 ### Callback that allows you to click on heatmap to get scatterplot of variable pair
 
@@ -198,9 +278,34 @@ def update_figure(vars):
     Output("scatter", "figure"), 
     Input("graph", "clickData"),
     Input("variables", "value"),
+    Input("age_filter", "value"),
+    Input("race_filter", "value"), 
+    Input("sex_filter", "value"),
 )
-def update_scatter(click_data, vars):
-    df = data2[vars]
+def update_scatter(click_data, vars, age, race, sex):
+    if age == -1 and race == -1 and sex == -1:
+        df = data2[vars]
+    elif age == -1 and race == -1 and sex != -1:
+        df = data2[data2["Sex of Child"] == sex]
+        df = df[vars]
+    elif age == -1 and sex == -1 and race != -1:
+        df = data2[data2["Race of Child"] == race]
+        df = df[vars]
+    elif race == -1 and sex == -1 and age != -1:        
+        df = data2[data2["Age of Child"] == age]
+        df = df[vars]
+    elif age == -1 and race != -1 and sex != -1:
+        df = data2[(data2["Race of Child"] == race) & (data2["Sex of Child"] == sex)]
+        df = df[vars]
+    elif race == -1 and age != -1 and sex != -1:
+        df = data2[(data2["Age of Child"] == age) & (data2["Sex of Child"] == sex)]
+        df = df[vars]
+    elif sex == -1 and age != -1 and race != -1:
+        df = data2[(data2["Age of Child"] == age) & (data2["Race of Child"] == race)]
+        df = df[vars]
+    elif age != -1 and race != -1 and sex != -1:
+        df = data2[(data2["Age of Child"] == age) & (data2["Race of Child"] == race) & (data2["Sex of Child"] == sex)]
+        df = df[vars]
     x_value = str(click_data['points'][0]['x'])
     y_value = str(click_data['points'][0]['y'])
     if x_value == y_value:
@@ -265,8 +370,7 @@ def update_multi_reg(x_var, y_var, z_var):
     mesh_size = .02
     margin = 0
 
-    df = pd.read_csv('./data/nsch_2020_topical.csv')[columns_of_interest2]
-    df.columns = labels2
+    df = data2
     df = df.fillna(0)
 
     X = df[[x_var, y_var]]
