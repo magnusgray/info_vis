@@ -20,8 +20,6 @@ Need to Know:
 
         heatmaps : Contains images of the Seaborn heatmaps created in QuickAnalysis.py
 
-        venv : just the virtual environment folder
-
     Files:
         .gitignore : stuff to ignore when pushed to github
 
