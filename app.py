@@ -223,8 +223,8 @@ app.layout = html.Div([
         id='data_overview',
         options=[
             {'label': 'Age', 'value': 0},
-            {'label': 'Sex', 'value': 1},
-            {'label': 'Race', 'value': 2},
+            {'label': 'Race', 'value': 1},
+            {'label': 'Sex', 'value': 2},
         ],
         value = 0
     ),
@@ -423,16 +423,16 @@ def update_overview(var):
         fig.update_layout(autosize=True, height=500, width=1000)
         return fig
     elif var == 1:
-        sex_labels = ["Male", "Female"]
-        sex_count = data2["Sex of Child"].value_counts().to_list()
-        fig = go.Figure(data=[go.Pie(labels=sex_labels, values=sex_count, textinfo='label+percent', insidetextorientation='radial')])
-        fig.update_layout(autosize=True, height=500, width=750)
-        return fig
-    elif var == 2:
         race_labels = ["White", "Black or African American", "American Indian or Alaska Native", "Asian", "Native Hawaiian or Other Pacific Islander", "Two or More Races"]
         race_count = data2["Race of Child"].value_counts().to_list()
         fig = go.Figure(data=[go.Pie(labels=race_labels, values=race_count, textinfo='label+percent', insidetextorientation='horizontal')])
         fig.update_layout(autosize=True, height=500, width=1000)
+        return fig
+    elif var == 2:
+        sex_labels = ["Male", "Female"]
+        sex_count = data2["Sex of Child"].value_counts().to_list()
+        fig = go.Figure(data=[go.Pie(labels=sex_labels, values=sex_count, textinfo='label+percent', insidetextorientation='radial')])
+        fig.update_layout(autosize=True, height=500, width=750)
         return fig
 
 ### Makes heatmap based on selected variables
