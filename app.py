@@ -223,8 +223,8 @@ app.layout = html.Div([
         id='data_overview',
         options=[
             {'label': 'Age', 'value': 0},
-            {'label': 'Race', 'value': 1},
-            {'label': 'Sex', 'value': 2},
+            {'label': 'Sex', 'value': 1},
+            {'label': 'Race', 'value': 2},
         ],
         value = 0
     ),
