@@ -15,6 +15,145 @@ import base64
 from ast import literal_eval
 import itertools
 
+"""
+import seaborn as sns
+
+def find_friendly_name(s_column, lst_column_decoder):
+    s_column = s_column.upper()
+    if any(s_column in s for s in lst_column_decoder):
+        for s_lst_value in lst_column_decoder:
+            if s_column in s_lst_value:
+                #print(s_lst_value + ' ' + s_lst_value + '\n', end='\n')
+                a_return = str(s_lst_value).split(' - ', maxsplit=1)
+                return(a_return[1])
+
+def rename_columns(df_data):
+    for s_column in df_data:
+        if s_column != 'DATE':
+            s_new_column_name = find_friendly_name(s_column, lst_column_decoder)
+            df_data.rename(columns={s_column : s_new_column_name}, inplace=True)
+    return(df_data)
+
+def pickle_save(s_file_location, df_to_pickle):
+    pd.to_pickle(df_to_pickle, s_file_location)
+
+def pickle_open(s_file_location):
+    return(pd.read_pickle(s_file_location))
+
+##if __name__ == '__main__':
+
+b_create_pickle = False
+
+# WORKING DIRECTORY
+s_wk_dir = './data/'
+
+if b_create_pickle:
+    nan_value = float("NaN")
+
+    #LOAD AND PREPARE THE FILE DESCRIPTION FILE TO USE AS DECODING THE COLUMN NAMES
+    with open (s_wk_dir + 'File_Description.txt',encoding='utf-8') as f:
+        lst_file_description = f.readlines()
+    f.close()
+
+    s_file_description = ' '.join(lst_file_description)
+    del lst_file_description
+    a_file_description = s_file_description.split('\n')
+    del s_file_description
+
+    lst_column_decoder = []
+    for s in a_file_description:
+        if '-' in s:
+            lst_column_decoder.append(s)
+
+    #READ FILES, SET A DATE ACCORDING FILE BEING LOADED
+    df_data = pd.read_stata(s_wk_dir + 'nsch_2020_topical.dta')
+                            #columns=a_columns)
+    df_data['YEAR'] = '2020'
+    df_temp_data = pd.read_stata(s_wk_dir + 'nsch_2019_topical.dta')
+                                    #columns=a_columns)
+    df_temp_data['YEAR'] = '2019'
+    df_data.append(df_temp_data)
+    df_temp_data = pd.read_stata(s_wk_dir + 'nsch_2018_topical.dta')
+                                    #columns=a_columns)
+    df_temp_data['YEAR'] = '2018'
+    df_data.append(df_temp_data)
+
+    df_temp_data = pd.read_stata(s_wk_dir + 'nsch_2017_topical.dta')
+                                # columns=a_columns)
+    df_temp_data['YEAR'] = '2017'
+    df_data.append(df_temp_data)
+
+    #df_data = df_data.set_index('YEAR')
+
+    # data = dowhy.datasets.linear_dataset(
+    #     beta=10,
+    #     num_common_causes=5,
+    #     num_instruments=2,
+    #     num_samples=10000,
+    #     treatment_is_binary=True)
+
+
+    del df_temp_data
+
+    df_temp_data = pd.DataFrame(df_data, columns=['YEAR'])
+    df_data = rename_columns(df_data)
+
+    df_data['YEAR'] = df_temp_data
+    del df_temp_data
+    #MODIFY VALUE TYPE OF DATE TO A DATETIME VALUE
+    #df_data['DATE'] = pd.to_datetime(df_data['DATE']).dt.date
+
+    # #INDEX ACCORDING TO DATE
+    #df_data = df_data.set_index('YEAR')
+
+
+    #CALCULATE CORRELATION
+    df_corr = df_data.corr().abs()
+    #PREPARE TO DISPLAY RESULTS
+    df_corr_unstacked = df_corr.unstack().to_frame()
+
+    df_corr_unstacked.rename(columns={list(df_corr_unstacked)[0]:'CORRELATION'}, inplace=True)
+    pd.to_numeric(df_corr_unstacked['CORRELATION'], errors='coerce').notnull().all()
+
+    df_corr_unstacked.dropna(subset=['CORRELATION'], inplace=True)
+
+    df_corr_unstacked = df_corr_unstacked[df_corr_unstacked.CORRELATION > .8]
+    df_corr_unstacked.reset_index(inplace=True)
+
+
+    #REMOVE RECORDS WHICH LEFT AND RIGHT ARE THE SAME
+    df_corr_unstacked = df_corr_unstacked[df_corr_unstacked['level_1'] != df_corr_unstacked['level_0']]
+
+
+    #GET LIST OF COLUMNS WHICH HAVE CORRELATION
+    lst_columns = df_corr_unstacked['level_1'].tolist()
+    #CREATE A SMALLER DF WITH ONLY THOSE COLUMNS TO CHECK FOR CAUSALITY
+    df_reduced_main_data = df_data[df_data.columns.intersection(lst_columns)]
+
+    pickle_save(s_wk_dir + 'pickedmaindata',df_reduced_main_data)
+    pickle_save(s_wk_dir + 'pickedcorrdata', df_corr_unstacked)
+    pickle_save(s_wk_dir + 'pickedrawmaindata', df_data)
+
+
+    del a_file_description, df_corr_unstacked, df_corr, df_data, df_reduced_main_data, f, s
+
+df_reduced_main_data = pickle_open(s_wk_dir + 'pickedmaindata')
+df_corr_unstacked= pickle_open(s_wk_dir + 'pickedcorrdata')
+df_raw_main_data = pickle_open(s_wk_dir + 'pickedrawmaindata')
+
+# DESCRIBE DATA
+
+######################
+#HISTOGRAM
+fig_1 = px.histogram(df_raw_main_data, y='Age of Selected Child - In Years (S1)', x='YEAR')
+fig_1.update_layout(bargap=0.1)
+#fig_1.show()
+
+fig_2 = px.histogram(df_raw_main_data, x='Birth Year (T1 T2 T3)')
+fig_2.update_layout(bargap=0.1)
+#fig_2.show()
+"""
+
 adult1_columns = ['a1_age', 'a1_sex', 'a1_employed', 'a1_grade', 'a1_menthealth', 'a1_physhealth', 'a1_marital', 'a1_relation']
 adult2_columns = ['a2_age', 'a2_sex', 'a2_employed', 'a2_grade', 'a2_menthealth', 'a2_physhealth', 'a2_marital', 'a2_relation']
 gen_adult_info = ['family_r', 'famcount', 'totkids_r', 'k9q40', 'k9q41', 'k7q33', 'k8q35', 'hopeful', 'k8q31', 'k8q32', 'k8q34']
@@ -55,6 +194,22 @@ corr2 = data2.corr()
 #mask2 = np.triu(np.ones_like(corr2, dtype=bool))
 #corr2 = corr2.mask(mask2)
 
+"""
+fig_1_1 = px.histogram(data2, x="Age of Child")
+fig_1_1.update_layout(bargap=0.1)
+fig_1_1.update_layout(autosize=True, height=500, width=1000)
+
+sex_labels = ["Male", "Female"]
+sex_count = data2["Sex of Child"].value_counts().to_list()
+fig_2_2 = go.Figure(data=[go.Pie(labels=sex_labels, values=sex_count, textinfo='label+percent', insidetextorientation='radial')])
+fig_2_2.update_layout(autosize=True, height=500, width=750)
+
+race_labels = ["White", "Black or African American", "American Indian or Alaska Native", "Asian", "Native Hawaiian or Other Pacific Islander", "Two or More Races"]
+race_count = data2["Race of Child"].value_counts().to_list()
+fig_3_3 = go.Figure(data=[go.Pie(labels=race_labels, values=race_count, textinfo='label+percent', insidetextorientation='horizontal')])
+fig_3_3.update_layout(autosize=True, height=500, width=1000)
+"""
+
 app = dash.Dash(__name__)
 
 server = app.server
@@ -62,6 +217,19 @@ server = app.server
 app.layout = html.Div([
     html.H1("National Survey of Children's Health"),
     html.H2(""),
+    html.H2("Data Overview"),
+    html.H3("Select whether to view data by Child Age, Race, or Sex"),
+    dcc.Dropdown(
+        id='data_overview',
+        options=[
+            {'label': 'Age', 'value': 0},
+            {'label': 'Race', 'value': 1},
+            {'label': 'Sex', 'value': 2},
+        ],
+        value = 0
+    ),
+    dcc.Graph(id="overview"),
+    html.H1(""),
     html.H2("Correlation Visualization Tool"),
     html.H2(""),
     html.H3("Please select varibles to be compared."),
@@ -232,6 +400,40 @@ app.layout = html.Div([
     dcc.Graph(id="multi_reg2"),
     html.H1(""),
 """
+
+"""
+    dcc.Graph(figure = fig_1_1),
+    html.H1(""),
+    html.H3("Data by Child Sex & Race"),
+    html.Div(children=[
+        dcc.Graph(figure = fig_2_2, style={'display': 'inline-block'}),
+        dcc.Graph(figure = fig_3_3, style={'display': 'inline-block'}),
+    ], style={'width': '100%', 'display': 'inline-block'}),
+"""
+
+### Data overview
+@app.callback(
+    Output("overview", "figure"), 
+    Input("data_overview", "value"),
+)
+def update_overview(var):
+    if var == 0:
+        fig = px.histogram(data2, x="Age of Child")
+        fig.update_layout(bargap=0.1)
+        fig.update_layout(autosize=True, height=500, width=1000)
+        return fig
+    elif var == 1:
+        sex_labels = ["Male", "Female"]
+        sex_count = data2["Sex of Child"].value_counts().to_list()
+        fig = go.Figure(data=[go.Pie(labels=sex_labels, values=sex_count, textinfo='label+percent', insidetextorientation='radial')])
+        fig.update_layout(autosize=True, height=500, width=750)
+        return fig
+    elif var == 2:
+        race_labels = ["White", "Black or African American", "American Indian or Alaska Native", "Asian", "Native Hawaiian or Other Pacific Islander", "Two or More Races"]
+        race_count = data2["Race of Child"].value_counts().to_list()
+        fig = go.Figure(data=[go.Pie(labels=race_labels, values=race_count, textinfo='label+percent', insidetextorientation='horizontal')])
+        fig.update_layout(autosize=True, height=500, width=1000)
+        return fig
 
 ### Makes heatmap based on selected variables
 

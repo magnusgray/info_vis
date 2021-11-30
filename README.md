@@ -9,13 +9,14 @@ Notes to Self:
     Install requiremnets.txt : pip install -r requirements.txt
 
 Need to Know:
+    
     Folders:
         causal_models : Contains images of causal models built for presentation
 
         corr_tables : Contains Excel files of the correlation tables made in QuickAnalysis.py
 
         data : Contains data in orginal format (.dta) from 2016-2020 as well as data in .csv format
-            (only the nsch_2020_topical.csv was used in my analysis)
+            Also contains .txt file with variable information 
 
         heatmaps : Contains images of the Seaborn heatmaps created in QuickAnalysis.py
 
