@@ -15,7 +15,6 @@ import base64
 from ast import literal_eval
 import itertools
 
-"""
 import seaborn as sns
 
 def find_friendly_name(s_column, lst_column_decoder):
@@ -152,7 +151,7 @@ fig_1.update_layout(bargap=0.1)
 fig_2 = px.histogram(df_raw_main_data, x='Birth Year (T1 T2 T3)')
 fig_2.update_layout(bargap=0.1)
 #fig_2.show()
-"""
+
 
 adult1_columns = ['a1_age', 'a1_sex', 'a1_employed', 'a1_grade', 'a1_menthealth', 'a1_physhealth', 'a1_marital', 'a1_relation']
 adult2_columns = ['a2_age', 'a2_sex', 'a2_employed', 'a2_grade', 'a2_menthealth', 'a2_physhealth', 'a2_marital', 'a2_relation']
@@ -210,6 +209,27 @@ fig_3_3 = go.Figure(data=[go.Pie(labels=race_labels, values=race_count, textinfo
 fig_3_3.update_layout(autosize=True, height=500, width=1000)
 """
 
+"""
+df_gender_descriptive_stats = pd.DataFrame(df_raw_main_data['Sex of Selected Child (S1)'].value_counts())
+df_gender_descriptive_stats.reset_index(inplace=True)
+
+df_gender_descriptive_stats.rename(columns={'Sex of Selected Child (S1)':'Count','index': 'Gender'}, inplace=True)
+df_gender_descriptive_stats.loc[df_gender_descriptive_stats.Gender==1,['Gender']]='Male'
+df_gender_descriptive_stats.loc[df_gender_descriptive_stats.Gender==2, ['Gender']] = 'Female'
+
+fig_gender_piechart = px.pie(df_gender_descriptive_stats,
+                            values='Count',
+                            names='Gender',
+                            title='Percent of Children by Gender',
+                            color='Gender',
+                            color_discrete_map={'Male': 'royalblue',
+                                                'Female': 'pink'}
+                            )
+fig_gender_piechart.update_traces(textposition='inside', textinfo='percent+label')
+fig_gender_piechart.show()
+del df_gender_descriptive_stats
+"""
+
 app = dash.Dash(__name__)
 
 server = app.server
@@ -218,7 +238,7 @@ app.layout = html.Div([
     html.H1("National Survey of Children's Health"),
     html.H2(""),
     html.H2("Data Overview"),
-    html.H3("Select whether to view data by Child Age, Race, or Sex"),
+    html.H3("Select whether to view data by Child Age, Race, or Sex."),
     dcc.Dropdown(
         id='data_overview',
         options=[
@@ -418,7 +438,7 @@ app.layout = html.Div([
 )
 def update_overview(var):
     if var == 0:
-        fig = px.histogram(data2, x="Age of Child")
+        fig = px.histogram(data2, x="Age of Child", title="Count of Children by Age")
         fig.update_layout(bargap=0.1)
         fig.update_layout(autosize=True, height=500, width=1000)
         return fig
@@ -426,14 +446,30 @@ def update_overview(var):
         race_labels = ["White", "Black or African American", "American Indian or Alaska Native", "Asian", "Native Hawaiian or Other Pacific Islander", "Two or More Races"]
         race_count = data2["Race of Child"].value_counts().to_list()
         fig = go.Figure(data=[go.Pie(labels=race_labels, values=race_count, textinfo='label+percent', insidetextorientation='horizontal')])
-        fig.update_layout(autosize=True, height=500, width=1000)
+        fig.update_layout(title_text="Percent of Children by Race", autosize=True, height=500, width=1000)
         return fig
     elif var == 2:
-        sex_labels = ["Male", "Female"]
-        sex_count = data2["Sex of Child"].value_counts().to_list()
-        fig = go.Figure(data=[go.Pie(labels=sex_labels, values=sex_count, textinfo='label+percent', insidetextorientation='radial')])
-        fig.update_layout(autosize=True, height=500, width=750)
-        return fig
+        df_gender_descriptive_stats = pd.DataFrame(df_raw_main_data['Sex of Selected Child (S1)'].value_counts())
+        df_gender_descriptive_stats.reset_index(inplace=True)
+
+        df_gender_descriptive_stats.rename(columns={'Sex of Selected Child (S1)':'Count','index': 'Gender'}, inplace=True)
+        df_gender_descriptive_stats.loc[df_gender_descriptive_stats.Gender==1,['Gender']]='Male'
+        df_gender_descriptive_stats.loc[df_gender_descriptive_stats.Gender==2, ['Gender']] = 'Female'
+
+        fig_gender_piechart = px.pie(df_gender_descriptive_stats,
+                                    values='Count',
+                                    names='Gender',
+                                    title='Percent of Children by Gender',
+                                    color='Gender',
+                                    color_discrete_map={'Male': 'royalblue',
+                                                        'Female': 'pink'}
+                                    )
+        fig_gender_piechart.update_traces(textposition='inside', textinfo='percent+label')
+        #sex_labels = ["Male", "Female"]
+        #sex_count = data2["Sex of Child"].value_counts().to_list()
+        #fig = go.Figure(data=[go.Pie(labels=sex_labels, values=sex_count, textinfo='label+percent', insidetextorientation='radial')])
+        #fig.update_layout(autosize=True, height=500, width=750)
+        return fig_gender_piechart
 
 ### Makes heatmap based on selected variables
 
