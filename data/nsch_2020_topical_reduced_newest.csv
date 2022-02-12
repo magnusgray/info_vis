@@ -1,0 +1,1172 @@
+Age,Race,Sex,Diagnosed_with_Autism,Currently_has_Autism,Severity__of_Autism,Medicated_for_Autism,Behavioral_Treatment_for_Autism
+13,Black/African American,Female,Yes,Yes,1.0,No,No
+12,Black/African American,Male,Yes,Yes,1.0,Yes,No
+17,Black/African American,Female,Yes,Yes,2.0,No,Yes
+17,White,Male,Yes,Yes,1.0,Yes,No
+2,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+14,White,Male,Yes,Yes,1.0,No,Yes
+7,White,Male,Yes,Yes,2.0,No,No
+8,White,Male,Yes,Yes,2.0,No,No
+8,White,Male,Yes,Yes,1.0,No,No
+14,White,Female,Yes,Yes,1.0,Yes,Yes
+10,White,Male,Yes,Yes,1.0,No,No
+5,White,Male,Yes,Yes,1.0,No,No
+7,White,Female,Yes,Yes,2.0,No,No
+4,White,Male,Yes,Yes,2.0,No,Yes
+7,White,Female,Yes,Yes,1.0,No,No
+11,White,Male,Yes,Yes,2.0,No,No
+16,White,Male,Yes,Yes,2.0,Yes,Yes
+14,White,Male,Yes,Yes,2.0,Yes,No
+12,White,Male,Yes,Yes,3.0,No,Yes
+4,Two or More Races,Female,Yes,Yes,2.0,No,Yes
+16,White,Male,Yes,Yes,2.0,Yes,Yes
+12,White,Male,Yes,Yes,1.0,Yes,Yes
+9,White,Male,Yes,Yes,2.0,No,Yes
+6,Black/African American,Male,Yes,Yes,2.0,No,Yes
+5,White,Male,Yes,Yes,2.0,No,Yes
+11,White,Male,Yes,Yes,2.0,No,No
+16,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,1.0,No,Yes
+17,White,Male,Yes,Yes,2.0,Yes,No
+16,White,Male,Yes,Yes,1.0,No,No
+8,Two or More Races,Male,Yes,Yes,3.0,No,Yes
+13,White,Male,Yes,Yes,2.0,No,No
+15,White,Male,Yes,Yes,2.0,No,No
+15,White,Male,Yes,Yes,3.0,No,No
+17,White,Male,Yes,Yes,1.0,No,No
+7,White,Female,Yes,Yes,1.0,No,Yes
+5,White,Male,Yes,Yes,1.0,No,Yes
+17,White,Female,Yes,Yes,1.0,No,No
+5,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+14,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,1.0,Yes,Yes
+6,White,Male,Yes,Yes,1.0,No,Yes
+12,Black/African American,Male,Yes,Yes,1.0,No,No
+6,Black/African American,Male,Yes,Yes,2.0,No,Yes
+8,White,Female,Yes,Yes,3.0,Yes,Yes
+8,White,Female,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,1.0,No,No
+9,Black/African American,Male,Yes,Yes,3.0,Yes,Yes
+6,Black/African American,Male,Yes,Yes,1.0,No,Yes
+11,White,Female,Yes,Yes,3.0,No,No
+16,White,Male,Yes,Yes,3.0,Yes,No
+10,White,Male,Yes,Yes,2.0,No,No
+7,White,Male,Yes,Yes,1.0,No,Yes
+8,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Female,Yes,Yes,2.0,No,No
+4,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+17,White,Male,Yes,Yes,2.0,Yes,Yes
+9,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+7,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+9,White,Male,Yes,Yes,2.0,No,Yes
+8,White,Male,Yes,Yes,3.0,Yes,Yes
+10,White,Male,Yes,Yes,3.0,Yes,No
+8,Asian,Male,Yes,Yes,1.0,No,Yes
+6,White,Male,Yes,Yes,1.0,No,No
+13,Black/African American,Female,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,2.0,Yes,Yes
+10,White,Male,Yes,Yes,1.0,No,Yes
+17,White,Male,Yes,Yes,2.0,No,Yes
+6,White,Male,Yes,Yes,1.0,No,Yes
+12,White,Male,Yes,Yes,1.0,No,No
+6,White,Female,Yes,Yes,1.0,No,Yes
+17,White,Male,Yes,Yes,3.0,Yes,Yes
+12,White,Male,Yes,Yes,2.0,No,No
+17,White,Female,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,2.0,No,Yes
+11,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+3,White,Female,Yes,Yes,2.0,No,No
+13,White,Male,Yes,Yes,2.0,Yes,No
+12,White,Male,Yes,Yes,2.0,No,Yes
+9,White,Female,Yes,Yes,3.0,No,Yes
+12,White,Female,Yes,Yes,2.0,No,No
+6,White,Male,Yes,Yes,2.0,No,Yes
+12,White,Male,Yes,Yes,1.0,Yes,Yes
+17,Black/African American,Female,Yes,Yes,3.0,No,Yes
+16,White,Male,Yes,Yes,1.0,Yes,Yes
+10,White,Male,Yes,Yes,1.0,No,Yes
+5,Black/African American,Female,Yes,Yes,2.0,No,Yes
+13,White,Female,Yes,Yes,2.0,Yes,Yes
+16,Black/African American,Female,Yes,Yes,2.0,No,No
+9,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+11,Black/African American,Male,Yes,Yes,1.0,No,No
+13,White,Female,Yes,Yes,1.0,No,No
+6,White,Male,Yes,Yes,2.0,No,Yes
+13,White,Male,Yes,Yes,3.0,No,Yes
+4,White,Female,Yes,Yes,2.0,No,Yes
+2,White,Male,Yes,Yes,3.0,No,Yes
+11,Asian,Male,Yes,Yes,1.0,No,Yes
+4,Black/African American,Male,Yes,Yes,3.0,No,Yes
+8,White,Male,Yes,Yes,1.0,No,No
+10,Two or More Races,Male,Yes,Yes,3.0,No,Yes
+6,White,Male,Yes,Yes,2.0,No,No
+9,White,Female,Yes,Yes,2.0,Yes,Yes
+15,Two or More Races,Male,Yes,Yes,3.0,Yes,Yes
+5,White,Female,Yes,Yes,1.0,No,No
+10,White,Male,Yes,Yes,2.0,Yes,No
+14,White,Male,Yes,Yes,1.0,Yes,No
+5,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Female,Yes,Yes,2.0,No,Yes
+17,White,Female,Yes,Yes,1.0,No,Yes
+3,White,Female,Yes,Yes,2.0,No,Yes
+17,White,Female,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,2.0,Yes,Yes
+13,White,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,1.0,No,No
+14,White,Female,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,2.0,No,Yes
+17,White,Male,Yes,Yes,2.0,Yes,No
+9,White,Female,Yes,Yes,2.0,No,No
+13,Two or More Races,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,2.0,No,Yes
+2,White,Male,Yes,Yes,2.0,No,Yes
+3,Native Hawaiian or Other Pacific Islander,Female,Yes,Yes,3.0,No,Yes
+12,White,Female,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,2.0,No,Yes
+6,White,Male,Yes,Yes,1.0,No,No
+11,White,Male,Yes,Yes,2.0,No,No
+7,White,Male,Yes,Yes,2.0,No,Yes
+7,Asian,Male,Yes,Yes,2.0,No,Yes
+9,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+10,White,Female,Yes,Yes,1.0,No,Yes
+10,White,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,2.0,No,Yes
+17,Black/African American,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,1.0,Yes,No
+8,White,Male,Yes,Yes,2.0,Yes,Yes
+10,White,Male,Yes,Yes,1.0,No,Yes
+17,White,Female,Yes,Yes,1.0,Yes,No
+12,White,Male,Yes,Yes,1.0,No,No
+14,White,Male,Yes,Yes,2.0,No,No
+5,White,Male,Yes,Yes,2.0,Yes,Yes
+17,Two or More Races,Male,Yes,Yes,3.0,No,Yes
+4,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+3,Two or More Races,Male,Yes,Yes,1.0,No,No
+13,White,Female,Yes,Yes,2.0,No,No
+13,White,Female,Yes,Yes,2.0,No,Yes
+14,White,Male,Yes,Yes,3.0,Yes,Yes
+17,White,Male,Yes,Yes,2.0,Yes,Yes
+7,White,Male,Yes,Yes,1.0,No,No
+17,White,Female,Yes,Yes,3.0,Yes,Yes
+15,White,Male,Yes,Yes,2.0,No,Yes
+11,Native Hawaiian or Other Pacific Islander,Male,Yes,Yes,1.0,No,No
+6,White,Male,Yes,Yes,2.0,Yes,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+11,White,Male,Yes,Yes,2.0,No,No
+16,Black/African American,Male,Yes,Yes,3.0,Yes,Yes
+4,White,Male,Yes,Yes,1.0,No,Yes
+10,Asian,Male,Yes,Yes,1.0,No,No
+11,White,Male,Yes,Yes,1.0,Yes,Yes
+15,White,Female,Yes,Yes,1.0,Yes,Yes
+4,White,Male,Yes,Yes,2.0,No,Yes
+14,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,2.0,No,Yes
+6,White,Female,Yes,Yes,3.0,No,Yes
+12,White,Male,Yes,Yes,1.0,No,Yes
+15,Two or More Races,Male,Yes,Yes,2.0,No,No
+11,Two or More Races,Male,Yes,Yes,3.0,No,No
+16,White,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,1.0,No,No
+6,Black/African American,Male,Yes,Yes,2.0,No,No
+10,White,Male,Yes,Yes,1.0,No,No
+15,Black/African American,Male,Yes,Yes,2.0,Yes,Yes
+12,Asian,Male,Yes,Yes,2.0,No,No
+12,White,Male,Yes,Yes,2.0,No,Yes
+14,White,Male,Yes,Yes,1.0,Yes,Yes
+3,White,Female,Yes,Yes,2.0,No,Yes
+10,White,Male,Yes,Yes,2.0,No,Yes
+3,White,Male,Yes,Yes,2.0,No,Yes
+12,Two or More Races,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,3.0,No,Yes
+3,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+15,White,Female,Yes,Yes,2.0,Yes,Yes
+16,White,Male,Yes,Yes,2.0,Yes,Yes
+13,White,Female,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,3.0,No,Yes
+11,White,Male,Yes,Yes,2.0,Yes,Yes
+9,White,Male,Yes,Yes,1.0,No,No
+15,White,Female,Yes,Yes,2.0,No,No
+11,White,Male,Yes,Yes,1.0,No,No
+4,White,Male,Yes,Yes,2.0,No,Yes
+11,White,Male,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,1.0,Yes,Yes
+4,Two or More Races,Male,Yes,Yes,1.0,No,No
+5,White,Male,Yes,Yes,2.0,No,Yes
+15,Two or More Races,Male,Yes,Yes,2.0,No,No
+13,White,Male,Yes,Yes,2.0,No,Yes
+13,White,Male,Yes,Yes,2.0,No,No
+9,White,Male,Yes,Yes,2.0,No,No
+6,Asian,Male,Yes,Yes,2.0,No,Yes
+15,Asian,Male,Yes,Yes,3.0,Yes,Yes
+13,Two or More Races,Male,Yes,Yes,1.0,Yes,Yes
+2,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+11,Two or More Races,Male,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,3.0,Yes,Yes
+7,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,1.0,No,No
+14,White,Male,Yes,Yes,1.0,No,No
+7,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+15,Asian,Male,Yes,Yes,2.0,Yes,Yes
+7,Black/African American,Male,Yes,Yes,1.0,No,No
+6,Black/African American,Male,Yes,Yes,3.0,No,Yes
+12,Two or More Races,Female,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,2.0,No,No
+15,White,Male,Yes,Yes,2.0,No,No
+10,White,Male,Yes,Yes,1.0,Yes,Yes
+12,White,Male,Yes,Yes,1.0,No,No
+11,White,Male,Yes,Yes,1.0,Yes,Yes
+11,White,Male,Yes,Yes,1.0,No,No
+15,White,Female,Yes,Yes,1.0,No,No
+16,White,Female,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,2.0,No,Yes
+14,White,Female,Yes,Yes,2.0,No,Yes
+12,Two or More Races,Female,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,3.0,Yes,Yes
+7,White,Male,Yes,Yes,1.0,Yes,No
+9,White,Male,Yes,Yes,1.0,No,No
+11,White,Female,Yes,Yes,1.0,No,Yes
+8,White,Male,Yes,Yes,2.0,No,Yes
+17,White,Male,Yes,Yes,1.0,Yes,Yes
+8,White,Male,Yes,Yes,2.0,No,No
+9,Black/African American,Male,Yes,Yes,2.0,No,No
+15,White,Male,Yes,Yes,2.0,No,No
+7,White,Female,Yes,Yes,2.0,No,Yes
+10,White,Male,Yes,Yes,1.0,No,Yes
+7,White,Female,Yes,Yes,2.0,No,No
+9,White,Male,Yes,Yes,2.0,Yes,Yes
+15,Black/African American,Female,Yes,Yes,2.0,No,No
+6,American Indian or Alaskan Native,Male,Yes,Yes,1.0,No,No
+6,White,Male,Yes,Yes,1.0,Yes,Yes
+8,White,Female,Yes,Yes,1.0,No,No
+8,Black/African American,Female,Yes,Yes,2.0,No,Yes
+14,White,Male,Yes,Yes,2.0,Yes,No
+13,Native Hawaiian or Other Pacific Islander,Male,Yes,Yes,1.0,No,Yes
+5,White,Male,Yes,Yes,1.0,No,Yes
+6,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+14,Asian,Male,Yes,Yes,1.0,No,No
+9,White,Male,Yes,Yes,1.0,No,Yes
+14,Black/African American,Male,Yes,Yes,2.0,No,No
+5,White,Male,Yes,Yes,3.0,No,Yes
+9,White,Female,Yes,Yes,2.0,No,No
+16,White,Female,Yes,Yes,3.0,No,No
+17,White,Male,Yes,Yes,2.0,No,No
+12,White,Female,Yes,Yes,2.0,No,No
+6,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+8,White,Male,Yes,Yes,1.0,No,Yes
+6,Asian,Male,Yes,Yes,1.0,Yes,Yes
+14,White,Male,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,1.0,No,Yes
+16,White,Female,Yes,Yes,3.0,No,Yes
+17,White,Male,Yes,Yes,1.0,No,No
+13,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+14,White,Male,Yes,Yes,1.0,Yes,Yes
+13,White,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,3.0,Yes,Yes
+17,White,Male,Yes,Yes,2.0,No,No
+7,White,Male,Yes,Yes,3.0,No,Yes
+14,White,Male,Yes,Yes,2.0,No,No
+8,Black/African American,Male,Yes,Yes,2.0,No,Yes
+6,Black/African American,Male,Yes,Yes,2.0,No,No
+5,White,Male,Yes,Yes,2.0,No,Yes
+10,White,Female,Yes,Yes,2.0,No,Yes
+13,Black/African American,Male,Yes,Yes,3.0,No,Yes
+13,White,Male,Yes,Yes,2.0,No,No
+14,White,Female,Yes,Yes,2.0,Yes,Yes
+10,White,Male,Yes,Yes,2.0,No,Yes
+2,White,Male,Yes,Yes,1.0,No,Yes
+8,White,Female,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+13,White,Female,Yes,Yes,1.0,Yes,Yes
+2,White,Male,Yes,Yes,1.0,No,Yes
+6,Asian,Male,Yes,Yes,2.0,No,Yes
+17,White,Male,Yes,Yes,1.0,No,No
+11,White,Female,Yes,Yes,2.0,No,Yes
+14,White,Female,Yes,Yes,3.0,No,Yes
+12,Asian,Female,Yes,Yes,2.0,Yes,Yes
+8,White,Male,Yes,Yes,1.0,Yes,Yes
+5,Asian,Male,Yes,Yes,2.0,No,Yes
+7,White,Female,Yes,Yes,1.0,No,No
+6,White,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,1.0,Yes,Yes
+10,White,Male,Yes,Yes,1.0,Yes,No
+17,White,Female,Yes,Yes,1.0,No,No
+7,White,Male,Yes,Yes,2.0,Yes,No
+8,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+15,Two or More Races,Female,Yes,Yes,1.0,No,No
+10,Two or More Races,Male,Yes,Yes,2.0,No,No
+13,White,Female,Yes,Yes,1.0,No,Yes
+15,White,Male,Yes,Yes,1.0,No,Yes
+11,Asian,Male,Yes,Yes,2.0,No,Yes
+17,White,Male,Yes,Yes,1.0,No,No
+14,American Indian or Alaskan Native,Female,Yes,Yes,1.0,No,No
+11,White,Male,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,2.0,No,No
+11,White,Female,Yes,Yes,2.0,No,Yes
+12,White,Male,Yes,Yes,2.0,Yes,Yes
+11,Asian,Male,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,2.0,No,Yes
+6,White,Male,Yes,Yes,3.0,No,Yes
+14,White,Female,Yes,Yes,1.0,No,No
+10,White,Male,Yes,Yes,1.0,No,No
+5,White,Male,Yes,Yes,1.0,No,No
+16,White,Female,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+11,White,Male,Yes,Yes,3.0,No,No
+5,White,Male,Yes,Yes,3.0,No,Yes
+15,White,Female,Yes,Yes,3.0,Yes,Yes
+8,White,Male,Yes,Yes,1.0,Yes,Yes
+10,White,Female,Yes,Yes,3.0,Yes,Yes
+4,White,Female,Yes,Yes,1.0,No,Yes
+10,White,Male,Yes,Yes,1.0,Yes,Yes
+5,Two or More Races,Male,Yes,Yes,2.0,No,No
+15,White,Male,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,Yes
+3,White,Female,Yes,Yes,1.0,No,No
+13,White,Female,Yes,Yes,2.0,No,Yes
+9,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+15,Two or More Races,Female,Yes,Yes,2.0,Yes,Yes
+9,White,Male,Yes,Yes,2.0,No,Yes
+11,White,Male,Yes,Yes,2.0,No,Yes
+13,White,Male,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,1.0,No,No
+13,Asian,Female,Yes,Yes,2.0,No,Yes
+15,White,Female,Yes,Yes,2.0,No,No
+11,White,Male,Yes,Yes,1.0,No,No
+17,Black/African American,Male,Yes,Yes,2.0,No,No
+15,White,Male,Yes,Yes,2.0,No,No
+11,White,Male,Yes,Yes,1.0,No,No
+8,White,Male,Yes,Yes,2.0,Yes,Yes
+6,White,Female,Yes,Yes,2.0,No,Yes
+10,White,Male,Yes,Yes,2.0,Yes,Yes
+7,White,Female,Yes,Yes,3.0,No,Yes
+13,White,Male,Yes,Yes,2.0,No,No
+16,Two or More Races,Female,Yes,Yes,2.0,No,No
+5,White,Male,Yes,Yes,2.0,Yes,No
+3,White,Male,Yes,Yes,3.0,No,No
+7,White,Male,Yes,Yes,2.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+3,Black/African American,Male,Yes,Yes,2.0,No,Yes
+9,White,Female,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,1.0,Yes,No
+12,White,Male,Yes,Yes,1.0,No,Yes
+14,White,Female,Yes,Yes,2.0,No,No
+11,White,Female,Yes,Yes,1.0,No,No
+15,White,Female,Yes,Yes,2.0,Yes,No
+16,White,Male,Yes,Yes,1.0,Yes,No
+4,White,Female,Yes,Yes,1.0,No,Yes
+10,Two or More Races,Male,Yes,Yes,3.0,No,Yes
+10,White,Male,Yes,Yes,2.0,No,No
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+6,Two or More Races,Male,Yes,Yes,1.0,No,No
+9,White,Male,Yes,Yes,2.0,No,No
+16,White,Male,Yes,Yes,2.0,Yes,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+15,White,Female,Yes,Yes,2.0,Yes,Yes
+6,Asian,Male,Yes,Yes,1.0,No,Yes
+9,White,Male,Yes,Yes,2.0,No,Yes
+12,White,Male,Yes,Yes,2.0,No,Yes
+11,White,Male,Yes,Yes,1.0,Yes,Yes
+16,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,Yes
+4,Native Hawaiian or Other Pacific Islander,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,1.0,No,Yes
+4,Black/African American,Male,Yes,Yes,1.0,No,Yes
+12,White,Female,Yes,Yes,1.0,Yes,Yes
+16,White,Male,Yes,Yes,1.0,Yes,No
+11,White,Male,Yes,Yes,2.0,Yes,No
+3,White,Male,Yes,Yes,1.0,No,Yes
+15,White,Female,Yes,Yes,2.0,Yes,Yes
+5,Black/African American,Male,Yes,Yes,1.0,No,Yes
+16,Native Hawaiian or Other Pacific Islander,Male,Yes,Yes,1.0,No,No
+17,White,Female,Yes,Yes,1.0,No,No
+6,Two or More Races,Male,Yes,Yes,2.0,Yes,Yes
+13,White,Male,Yes,Yes,2.0,No,Yes
+2,White,Female,Yes,Yes,2.0,No,Yes
+13,Two or More Races,Female,Yes,Yes,2.0,No,No
+14,White,Female,Yes,Yes,1.0,No,Yes
+10,White,Male,Yes,Yes,2.0,Yes,Yes
+5,White,Male,Yes,Yes,2.0,No,Yes
+16,White,Male,Yes,Yes,2.0,Yes,No
+11,White,Male,Yes,Yes,2.0,No,Yes
+13,White,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,3.0,No,Yes
+6,White,Male,Yes,Yes,2.0,No,No
+16,White,Female,Yes,Yes,1.0,Yes,Yes
+13,Two or More Races,Male,Yes,Yes,2.0,No,No
+9,Two or More Races,Male,Yes,Yes,2.0,No,No
+14,White,Male,Yes,Yes,1.0,No,No
+11,White,Male,Yes,Yes,1.0,Yes,Yes
+4,Asian,Male,Yes,Yes,1.0,No,Yes
+7,Black/African American,Male,Yes,Yes,2.0,No,No
+9,Two or More Races,Female,Yes,Yes,2.0,Yes,No
+6,White,Female,Yes,Yes,1.0,Yes,Yes
+7,White,Male,Yes,Yes,1.0,No,No
+11,White,Male,Yes,Yes,2.0,Yes,Yes
+12,White,Male,Yes,Yes,1.0,Yes,Yes
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+6,White,Female,Yes,Yes,1.0,No,Yes
+15,White,Female,Yes,Yes,2.0,No,No
+7,White,Male,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,2.0,Yes,Yes
+14,White,Male,Yes,Yes,2.0,No,No
+17,White,Male,Yes,Yes,1.0,No,No
+6,Black/African American,Male,Yes,Yes,2.0,No,Yes
+5,White,Male,Yes,Yes,1.0,Yes,Yes
+15,White,Male,Yes,Yes,1.0,Yes,Yes
+12,White,Male,Yes,Yes,1.0,No,No
+5,White,Male,Yes,Yes,2.0,No,Yes
+17,White,Male,Yes,Yes,2.0,No,Yes
+12,White,Male,Yes,Yes,1.0,No,Yes
+4,White,Male,Yes,Yes,1.0,No,Yes
+8,Asian,Male,Yes,Yes,1.0,No,No
+14,White,Male,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,2.0,No,Yes
+5,White,Female,Yes,Yes,1.0,No,Yes
+15,Asian,Male,Yes,Yes,2.0,Yes,Yes
+3,White,Male,Yes,Yes,2.0,No,No
+12,White,Male,Yes,Yes,1.0,Yes,Yes
+11,White,Male,Yes,Yes,1.0,No,Yes
+12,Black/African American,Male,Yes,Yes,2.0,No,No
+11,White,Male,Yes,Yes,2.0,Yes,No
+9,Black/African American,Female,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,1.0,No,No
+16,White,Female,Yes,Yes,2.0,No,No
+17,White,Male,Yes,Yes,2.0,Yes,Yes
+9,White,Male,Yes,Yes,2.0,No,No
+11,White,Male,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,2.0,Yes,No
+8,White,Male,Yes,Yes,1.0,Yes,Yes
+14,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Female,Yes,Yes,3.0,Yes,Yes
+8,White,Female,Yes,Yes,1.0,No,No
+11,White,Female,Yes,Yes,2.0,No,No
+8,White,Male,Yes,Yes,1.0,No,No
+16,White,Female,Yes,Yes,1.0,No,No
+6,White,Male,Yes,Yes,1.0,Yes,Yes
+8,White,Female,Yes,Yes,3.0,No,Yes
+16,White,Female,Yes,Yes,1.0,Yes,Yes
+11,White,Male,Yes,Yes,2.0,Yes,Yes
+9,White,Male,Yes,Yes,2.0,No,No
+11,White,Male,Yes,Yes,1.0,No,No
+6,White,Male,Yes,Yes,1.0,No,Yes
+5,White,Male,Yes,Yes,1.0,No,Yes
+6,White,Male,Yes,Yes,3.0,No,Yes
+5,White,Male,Yes,Yes,1.0,No,No
+14,White,Male,Yes,Yes,1.0,No,Yes
+17,American Indian or Alaskan Native,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,1.0,Yes,No
+15,White,Female,Yes,Yes,1.0,No,Yes
+10,White,Male,Yes,Yes,1.0,No,Yes
+4,White,Male,Yes,Yes,2.0,No,Yes
+13,Native Hawaiian or Other Pacific Islander,Female,Yes,Yes,1.0,No,No
+5,White,Male,Yes,Yes,3.0,No,Yes
+17,Two or More Races,Male,Yes,Yes,1.0,No,No
+8,White,Male,Yes,Yes,2.0,Yes,Yes
+14,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+6,Two or More Races,Male,Yes,Yes,2.0,Yes,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,1.0,No,No
+8,Asian,Male,Yes,Yes,3.0,No,Yes
+6,White,Male,Yes,Yes,3.0,No,Yes
+10,White,Male,Yes,Yes,3.0,No,Yes
+5,White,Male,Yes,Yes,3.0,No,Yes
+12,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,2.0,No,Yes
+14,White,Male,Yes,Yes,1.0,No,No
+14,White,Male,Yes,Yes,1.0,No,No
+8,White,Male,Yes,Yes,2.0,No,Yes
+10,White,Male,Yes,Yes,1.0,No,No
+14,White,Male,Yes,Yes,1.0,Yes,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+17,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+17,White,Female,Yes,Yes,1.0,No,Yes
+12,White,Female,Yes,Yes,1.0,No,Yes
+7,White,Male,Yes,Yes,1.0,No,Yes
+17,White,Male,Yes,Yes,1.0,No,No
+3,White,Male,Yes,Yes,2.0,No,Yes
+16,Asian,Male,Yes,Yes,1.0,No,Yes
+8,White,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,1.0,Yes,Yes
+11,White,Male,Yes,Yes,2.0,No,No
+5,White,Male,Yes,Yes,1.0,No,Yes
+12,White,Male,Yes,Yes,1.0,No,Yes
+3,White,Female,Yes,Yes,2.0,No,No
+10,White,Male,Yes,Yes,1.0,No,No
+14,White,Male,Yes,Yes,1.0,No,No
+3,White,Male,Yes,Yes,1.0,No,No
+6,White,Female,Yes,Yes,1.0,Yes,Yes
+16,White,Male,Yes,Yes,2.0,No,Yes
+12,White,Male,Yes,Yes,1.0,Yes,No
+14,White,Female,Yes,Yes,3.0,No,Yes
+9,Two or More Races,Female,Yes,Yes,2.0,No,Yes
+11,White,Female,Yes,Yes,1.0,No,No
+9,White,Male,Yes,Yes,1.0,Yes,Yes
+5,White,Female,Yes,Yes,3.0,No,Yes
+17,White,Male,Yes,Yes,2.0,Yes,No
+6,Native Hawaiian or Other Pacific Islander,Male,Yes,Yes,2.0,No,Yes
+2,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+14,White,Male,Yes,Yes,2.0,No,Yes
+15,Two or More Races,Male,Yes,Yes,1.0,No,No
+9,White,Male,Yes,Yes,1.0,No,Yes
+14,White,Male,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,2.0,No,No
+14,Native Hawaiian or Other Pacific Islander,Male,Yes,Yes,1.0,No,Yes
+10,White,Male,Yes,Yes,1.0,No,No
+10,White,Male,Yes,Yes,2.0,Yes,Yes
+9,White,Male,Yes,Yes,2.0,No,No
+12,Two or More Races,Female,Yes,Yes,2.0,No,No
+11,White,Female,Yes,Yes,3.0,Yes,No
+2,White,Male,Yes,Yes,2.0,No,No
+12,White,Male,Yes,Yes,2.0,No,No
+13,White,Male,Yes,Yes,1.0,Yes,No
+17,White,Male,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,2.0,Yes,Yes
+11,Asian,Male,Yes,Yes,1.0,No,Yes
+3,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,1.0,Yes,Yes
+14,White,Male,Yes,Yes,1.0,No,No
+10,White,Female,Yes,Yes,2.0,No,Yes
+3,White,Female,Yes,Yes,1.0,No,Yes
+15,White,Male,Yes,Yes,1.0,No,Yes
+7,White,Male,Yes,Yes,1.0,No,Yes
+12,White,Male,Yes,Yes,1.0,No,No
+9,White,Male,Yes,Yes,2.0,No,Yes
+7,White,Male,Yes,Yes,3.0,No,Yes
+17,White,Female,Yes,Yes,1.0,No,Yes
+7,White,Female,Yes,Yes,3.0,No,No
+9,White,Male,Yes,Yes,1.0,No,No
+14,Two or More Races,Female,Yes,Yes,2.0,No,Yes
+11,White,Male,Yes,Yes,2.0,Yes,Yes
+15,White,Male,Yes,Yes,3.0,Yes,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,2.0,Yes,Yes
+17,White,Male,Yes,Yes,1.0,Yes,No
+15,White,Male,Yes,Yes,1.0,Yes,Yes
+8,White,Male,Yes,Yes,1.0,No,Yes
+8,White,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,2.0,No,Yes
+11,White,Female,Yes,Yes,2.0,No,Yes
+14,White,Male,Yes,Yes,1.0,Yes,Yes
+12,Two or More Races,Female,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,1.0,No,No
+2,White,Male,Yes,Yes,2.0,No,No
+15,White,Male,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,1.0,Yes,Yes
+8,Black/African American,Male,Yes,Yes,1.0,No,No
+3,White,Male,Yes,Yes,3.0,No,Yes
+8,White,Male,Yes,Yes,1.0,No,Yes
+3,White,Male,Yes,Yes,2.0,No,No
+16,White,Male,Yes,Yes,1.0,Yes,Yes
+4,White,Male,Yes,Yes,2.0,No,No
+16,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+4,White,Male,Yes,Yes,2.0,No,No
+6,White,Female,Yes,Yes,2.0,No,No
+7,Black/African American,Female,Yes,Yes,1.0,No,No
+15,Black/African American,Male,Yes,Yes,1.0,Yes,Yes
+14,White,Male,Yes,Yes,1.0,Yes,Yes
+14,White,Male,Yes,Yes,2.0,No,No
+13,White,Male,Yes,Yes,1.0,No,No
+9,Black/African American,Female,Yes,Yes,2.0,No,No
+16,White,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,2.0,No,No
+15,White,Male,Yes,Yes,1.0,No,Yes
+4,White,Male,Yes,Yes,1.0,No,Yes
+9,Native Hawaiian or Other Pacific Islander,Male,Yes,Yes,1.0,No,Yes
+13,Two or More Races,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,1.0,No,No
+9,Asian,Male,Yes,Yes,2.0,No,Yes
+2,White,Female,Yes,Yes,2.0,No,Yes
+8,White,Male,Yes,Yes,1.0,No,No
+7,White,Female,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,2.0,Yes,Yes
+7,White,Male,Yes,Yes,2.0,No,No
+10,White,Male,Yes,Yes,3.0,No,No
+17,White,Male,Yes,Yes,2.0,Yes,No
+14,White,Male,Yes,Yes,1.0,No,No
+8,Two or More Races,Male,Yes,Yes,3.0,No,Yes
+17,White,Male,Yes,Yes,1.0,Yes,No
+10,Two or More Races,Male,Yes,Yes,1.0,No,No
+15,Native Hawaiian or Other Pacific Islander,Female,Yes,Yes,1.0,No,No
+11,American Indian or Alaskan Native,Female,Yes,Yes,1.0,No,Yes
+11,Black/African American,Male,Yes,Yes,1.0,Yes,Yes
+7,White,Male,Yes,Yes,2.0,No,No
+7,White,Male,Yes,Yes,1.0,No,Yes
+3,Asian,Male,Yes,Yes,1.0,No,Yes
+17,White,Male,Yes,Yes,2.0,No,No
+7,Asian,Male,Yes,Yes,2.0,No,Yes
+14,White,Male,Yes,Yes,1.0,No,No
+8,White,Male,Yes,Yes,1.0,No,No
+10,White,Male,Yes,Yes,2.0,Yes,No
+17,Two or More Races,Male,Yes,Yes,1.0,No,No
+10,White,Male,Yes,Yes,3.0,No,Yes
+7,Asian,Male,Yes,Yes,2.0,No,No
+9,White,Female,Yes,Yes,2.0,No,Yes
+6,White,Male,Yes,Yes,2.0,No,Yes
+4,White,Female,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,2.0,No,No
+13,White,Male,Yes,Yes,2.0,No,Yes
+17,White,Female,Yes,Yes,2.0,No,No
+17,White,Male,Yes,Yes,1.0,Yes,Yes
+9,White,Male,Yes,Yes,2.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,2.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,Yes
+17,White,Male,Yes,Yes,1.0,Yes,No
+15,White,Male,Yes,Yes,2.0,No,No
+3,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,2.0,No,Yes
+13,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+17,Two or More Races,Female,Yes,Yes,2.0,No,Yes
+5,Two or More Races,Male,Yes,Yes,1.0,No,No
+17,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+13,White,Male,Yes,Yes,2.0,No,Yes
+16,White,Female,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,1.0,Yes,No
+3,White,Male,Yes,Yes,3.0,No,Yes
+3,White,Male,Yes,Yes,2.0,No,No
+15,Two or More Races,Male,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,2.0,No,Yes
+17,White,Male,Yes,Yes,2.0,Yes,Yes
+14,White,Male,Yes,Yes,1.0,Yes,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,1.0,Yes,No
+12,White,Female,Yes,Yes,1.0,Yes,Yes
+3,Black/African American,Male,Yes,Yes,1.0,No,No
+6,White,Male,Yes,Yes,1.0,No,No
+4,White,Male,Yes,Yes,1.0,No,No
+17,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+4,White,Male,Yes,Yes,1.0,No,Yes
+15,White,Male,Yes,Yes,2.0,No,Yes
+11,White,Male,Yes,Yes,2.0,Yes,No
+8,White,Female,Yes,Yes,3.0,Yes,Yes
+6,Asian,Male,Yes,Yes,2.0,No,Yes
+4,White,Male,Yes,Yes,3.0,No,Yes
+12,Asian,Male,Yes,Yes,2.0,No,Yes
+8,White,Male,Yes,Yes,1.0,No,Yes
+4,White,Male,Yes,Yes,2.0,No,No
+5,White,Male,Yes,Yes,2.0,No,Yes
+14,White,Male,Yes,Yes,1.0,No,No
+4,Black/African American,Female,Yes,Yes,2.0,Yes,Yes
+17,White,Male,Yes,Yes,1.0,Yes,Yes
+4,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+6,Black/African American,Female,Yes,Yes,1.0,No,No
+8,White,Male,Yes,Yes,2.0,No,Yes
+13,White,Male,Yes,Yes,2.0,Yes,No
+16,White,Male,Yes,Yes,3.0,No,Yes
+6,White,Male,Yes,Yes,2.0,Yes,Yes
+12,White,Male,Yes,Yes,3.0,No,Yes
+5,White,Female,Yes,Yes,2.0,Yes,Yes
+14,White,Male,Yes,Yes,2.0,No,Yes
+17,Two or More Races,Female,Yes,Yes,1.0,No,No
+4,White,Male,Yes,Yes,3.0,No,Yes
+5,White,Male,Yes,Yes,1.0,No,Yes
+11,Asian,Male,Yes,Yes,1.0,Yes,Yes
+3,White,Male,Yes,Yes,2.0,No,Yes
+6,White,Male,Yes,Yes,3.0,No,Yes
+14,Two or More Races,Male,Yes,Yes,1.0,No,No
+14,White,Male,Yes,Yes,2.0,Yes,Yes
+4,Black/African American,Male,Yes,Yes,3.0,No,Yes
+17,White,Male,Yes,Yes,1.0,No,Yes
+6,Black/African American,Male,Yes,Yes,1.0,No,No
+9,White,Male,Yes,Yes,3.0,Yes,Yes
+16,White,Male,Yes,Yes,2.0,Yes,Yes
+9,White,Male,Yes,Yes,1.0,Yes,Yes
+8,White,Male,Yes,Yes,2.0,Yes,Yes
+17,White,Male,Yes,Yes,2.0,Yes,No
+15,White,Female,Yes,Yes,1.0,No,No
+16,Asian,Male,Yes,Yes,2.0,No,No
+16,White,Female,Yes,Yes,1.0,No,Yes
+16,White,Female,Yes,Yes,2.0,No,Yes
+12,White,Male,Yes,Yes,2.0,No,No
+13,White,Female,Yes,Yes,2.0,Yes,Yes
+12,White,Female,Yes,Yes,2.0,No,No
+10,Two or More Races,Male,Yes,Yes,2.0,No,No
+3,White,Female,Yes,Yes,2.0,No,No
+6,White,Male,Yes,Yes,1.0,No,No
+10,Two or More Races,Male,Yes,Yes,2.0,No,No
+16,White,Male,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,1.0,No,No
+16,White,Female,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,2.0,Yes,No
+8,White,Male,Yes,Yes,1.0,No,Yes
+17,White,Female,Yes,Yes,2.0,Yes,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+7,Black/African American,Male,Yes,Yes,3.0,Yes,Yes
+11,White,Male,Yes,Yes,2.0,No,No
+7,Asian,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,3.0,Yes,Yes
+8,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+14,White,Male,Yes,Yes,1.0,No,No
+16,Black/African American,Male,Yes,Yes,1.0,Yes,Yes
+14,White,Male,Yes,Yes,1.0,No,No
+17,White,Female,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,1.0,Yes,Yes
+12,White,Male,Yes,Yes,1.0,No,No
+16,White,Female,Yes,Yes,2.0,Yes,Yes
+11,White,Male,Yes,Yes,1.0,No,Yes
+17,White,Female,Yes,Yes,2.0,Yes,Yes
+16,White,Female,Yes,Yes,1.0,Yes,No
+17,Two or More Races,Male,Yes,Yes,2.0,No,No
+8,Two or More Races,Female,Yes,Yes,1.0,No,Yes
+10,White,Male,Yes,Yes,2.0,No,Yes
+10,White,Male,Yes,Yes,1.0,Yes,Yes
+4,White,Female,Yes,Yes,2.0,No,Yes
+16,White,Male,Yes,Yes,2.0,No,Yes
+16,White,Male,Yes,Yes,1.0,Yes,Yes
+17,White,Female,Yes,Yes,1.0,No,No
+9,White,Male,Yes,Yes,1.0,No,Yes
+8,White,Male,Yes,Yes,1.0,Yes,Yes
+11,White,Male,Yes,Yes,2.0,No,No
+17,White,Male,Yes,Yes,2.0,Yes,No
+7,White,Female,Yes,Yes,1.0,No,Yes
+5,Black/African American,Male,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,1.0,No,No
+4,White,Male,Yes,Yes,2.0,No,Yes
+13,Two or More Races,Male,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,3.0,No,Yes
+17,White,Male,Yes,Yes,3.0,Yes,No
+11,White,Female,Yes,Yes,1.0,Yes,Yes
+13,White,Male,Yes,Yes,1.0,No,Yes
+5,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+3,White,Female,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,2.0,Yes,Yes
+4,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+17,White,Male,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,3.0,No,Yes
+9,Two or More Races,Female,Yes,Yes,2.0,No,Yes
+10,White,Male,Yes,Yes,2.0,Yes,Yes
+13,White,Male,Yes,Yes,3.0,No,Yes
+9,White,Male,Yes,Yes,1.0,No,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+14,White,Male,Yes,Yes,1.0,No,No
+7,Black/African American,Male,Yes,Yes,1.0,Yes,Yes
+16,Two or More Races,Male,Yes,Yes,3.0,Yes,Yes
+9,Two or More Races,Male,Yes,Yes,1.0,No,No
+11,Two or More Races,Female,Yes,Yes,1.0,No,Yes
+15,American Indian or Alaskan Native,Male,Yes,Yes,1.0,No,Yes
+11,White,Male,Yes,Yes,2.0,No,No
+8,White,Male,Yes,Yes,2.0,Yes,Yes
+17,White,Female,Yes,Yes,1.0,No,Yes
+10,White,Female,Yes,Yes,1.0,No,No
+11,White,Male,Yes,Yes,1.0,No,Yes
+16,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+9,White,Male,Yes,Yes,2.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,2.0,No,No
+13,White,Male,Yes,Yes,1.0,Yes,No
+2,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Female,Yes,Yes,1.0,Yes,Yes
+12,White,Male,Yes,Yes,1.0,No,No
+8,White,Male,Yes,Yes,1.0,No,No
+10,White,Male,Yes,Yes,3.0,No,No
+10,Black/African American,Male,Yes,Yes,3.0,No,Yes
+9,White,Male,Yes,Yes,1.0,Yes,No
+7,Black/African American,Male,Yes,Yes,1.0,Yes,Yes
+17,White,Male,Yes,Yes,1.0,No,No
+5,White,Male,Yes,Yes,2.0,No,Yes
+12,White,Female,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+12,White,Male,Yes,Yes,1.0,No,Yes
+17,White,Female,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,1.0,No,No
+10,White,Female,Yes,Yes,1.0,No,Yes
+4,Two or More Races,Female,Yes,Yes,2.0,No,Yes
+9,White,Male,Yes,Yes,2.0,Yes,Yes
+13,White,Female,Yes,Yes,1.0,No,No
+13,White,Female,Yes,Yes,1.0,No,Yes
+17,White,Male,Yes,Yes,1.0,No,No
+7,Two or More Races,Male,Yes,Yes,1.0,No,No
+10,White,Female,Yes,Yes,2.0,No,No
+8,White,Male,Yes,Yes,1.0,No,No
+8,White,Male,Yes,Yes,2.0,No,No
+14,White,Male,Yes,Yes,1.0,No,No
+3,White,Male,Yes,Yes,2.0,No,Yes
+17,White,Male,Yes,Yes,1.0,No,No
+3,White,Male,Yes,Yes,2.0,Yes,No
+11,White,Male,Yes,Yes,2.0,No,Yes
+16,White,Female,Yes,Yes,1.0,No,Yes
+14,White,Male,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,2.0,Yes,No
+5,White,Male,Yes,Yes,2.0,No,Yes
+8,White,Female,Yes,Yes,2.0,Yes,Yes
+12,White,Female,Yes,Yes,2.0,Yes,Yes
+11,White,Male,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,2.0,No,Yes
+11,Two or More Races,Female,Yes,Yes,2.0,Yes,Yes
+14,White,Female,Yes,Yes,2.0,No,Yes
+12,White,Male,Yes,Yes,1.0,No,No
+14,Two or More Races,Male,Yes,Yes,2.0,Yes,No
+4,White,Female,Yes,Yes,3.0,No,Yes
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+10,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+9,Black/African American,Male,Yes,Yes,1.0,No,Yes
+14,White,Female,Yes,Yes,1.0,No,No
+6,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,3.0,Yes,Yes
+16,White,Male,Yes,Yes,2.0,No,Yes
+14,White,Male,Yes,Yes,3.0,Yes,Yes
+14,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,1.0,Yes,Yes
+17,White,Male,Yes,Yes,1.0,No,No
+9,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+16,Black/African American,Male,Yes,Yes,1.0,No,No
+10,Black/African American,Male,Yes,Yes,1.0,No,Yes
+8,Two or More Races,Male,Yes,Yes,1.0,Yes,Yes
+14,Black/African American,Male,Yes,Yes,1.0,Yes,No
+14,White,Female,Yes,Yes,1.0,No,No
+17,Black/African American,Female,Yes,Yes,2.0,No,Yes
+10,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Female,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,1.0,No,Yes
+12,White,Male,Yes,Yes,2.0,Yes,Yes
+11,White,Female,Yes,Yes,1.0,No,Yes
+13,White,Female,Yes,Yes,3.0,No,No
+17,White,Male,Yes,Yes,2.0,No,Yes
+17,White,Male,Yes,Yes,2.0,Yes,Yes
+4,White,Male,Yes,Yes,1.0,No,No
+15,Black/African American,Male,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,2.0,No,No
+13,White,Female,Yes,Yes,1.0,No,No
+7,Black/African American,Male,Yes,Yes,3.0,No,Yes
+12,White,Male,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,2.0,No,No
+6,White,Male,Yes,Yes,1.0,No,Yes
+9,White,Male,Yes,Yes,1.0,No,Yes
+13,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+13,White,Female,Yes,Yes,2.0,No,Yes
+13,White,Male,Yes,Yes,3.0,Yes,Yes
+16,White,Female,Yes,Yes,2.0,Yes,Yes
+15,White,Male,Yes,Yes,1.0,No,Yes
+13,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,Yes
+14,White,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,1.0,No,No
+13,Black/African American,Male,Yes,Yes,3.0,No,Yes
+9,White,Female,Yes,Yes,1.0,Yes,No
+11,White,Male,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,2.0,Yes,Yes
+13,White,Male,Yes,Yes,1.0,Yes,Yes
+5,White,Female,Yes,Yes,2.0,No,Yes
+16,White,Male,Yes,Yes,1.0,Yes,Yes
+7,White,Male,Yes,Yes,1.0,Yes,No
+13,White,Male,Yes,Yes,1.0,No,No
+2,White,Male,Yes,Yes,2.0,No,Yes
+13,White,Female,Yes,Yes,3.0,No,Yes
+10,Two or More Races,Male,Yes,Yes,2.0,No,No
+2,White,Female,Yes,Yes,2.0,No,No
+12,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,1.0,Yes,Yes
+5,White,Male,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+14,White,Female,Yes,Yes,2.0,No,No
+6,White,Male,Yes,Yes,3.0,No,Yes
+4,Black/African American,Male,Yes,Yes,1.0,No,Yes
+3,White,Male,Yes,Yes,1.0,No,No
+8,White,Male,Yes,Yes,1.0,No,Yes
+7,Asian,Female,Yes,Yes,1.0,No,Yes
+8,White,Male,Yes,Yes,2.0,No,No
+16,White,Male,Yes,Yes,1.0,Yes,Yes
+11,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+5,White,Female,Yes,Yes,2.0,No,Yes
+6,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,1.0,No,Yes
+17,White,Male,Yes,Yes,1.0,No,Yes
+11,White,Female,Yes,Yes,2.0,Yes,Yes
+9,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,1.0,Yes,No
+12,White,Male,Yes,Yes,1.0,No,Yes
+9,White,Male,Yes,Yes,1.0,No,Yes
+12,White,Male,Yes,Yes,1.0,No,No
+9,Black/African American,Male,Yes,Yes,2.0,No,No
+7,White,Male,Yes,Yes,2.0,No,Yes
+7,Black/African American,Female,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,2.0,Yes,Yes
+7,White,Male,Yes,Yes,1.0,No,Yes
+10,White,Male,Yes,Yes,1.0,No,Yes
+9,White,Male,Yes,Yes,3.0,Yes,Yes
+8,White,Male,Yes,Yes,2.0,No,Yes
+11,White,Female,Yes,Yes,2.0,No,No
+12,White,Male,Yes,Yes,1.0,No,Yes
+7,American Indian or Alaskan Native,Male,Yes,Yes,1.0,Yes,Yes
+7,Two or More Races,Male,Yes,Yes,2.0,Yes,Yes
+16,White,Female,Yes,Yes,1.0,Yes,Yes
+11,Black/African American,Male,Yes,Yes,1.0,No,No
+12,Asian,Female,Yes,Yes,2.0,No,No
+16,White,Male,Yes,Yes,1.0,Yes,Yes
+4,White,Male,Yes,Yes,1.0,No,Yes
+11,Asian,Male,Yes,Yes,1.0,No,Yes
+9,White,Female,Yes,Yes,2.0,Yes,Yes
+17,White,Male,Yes,Yes,3.0,No,No
+13,White,Female,Yes,Yes,1.0,No,No
+11,White,Male,Yes,Yes,2.0,No,No
+17,White,Male,Yes,Yes,1.0,Yes,No
+8,White,Male,Yes,Yes,3.0,No,No
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+14,Black/African American,Male,Yes,Yes,3.0,No,No
+7,Native Hawaiian or Other Pacific Islander,Male,Yes,Yes,2.0,No,No
+7,Two or More Races,Male,Yes,Yes,2.0,No,No
+9,White,Male,Yes,Yes,1.0,No,Yes
+6,White,Male,Yes,Yes,2.0,No,Yes
+16,Black/African American,Male,Yes,Yes,1.0,No,No
+3,Black/African American,Male,Yes,Yes,3.0,Yes,Yes
+7,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+10,White,Male,Yes,Yes,1.0,No,No
+12,Black/African American,Male,Yes,Yes,2.0,Yes,Yes
+16,Black/African American,Male,Yes,Yes,2.0,No,No
+4,White,Male,Yes,Yes,2.0,No,Yes
+7,Two or More Races,Male,Yes,Yes,3.0,No,Yes
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+13,Two or More Races,Male,Yes,Yes,1.0,Yes,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,3.0,No,Yes
+11,White,Male,Yes,Yes,2.0,Yes,Yes
+13,White,Male,Yes,Yes,1.0,No,No
+14,White,Male,Yes,Yes,1.0,Yes,No
+2,White,Male,Yes,Yes,3.0,No,No
+14,White,Female,Yes,Yes,2.0,Yes,Yes
+3,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+8,White,Male,Yes,Yes,1.0,Yes,No
+9,White,Male,Yes,Yes,1.0,No,Yes
+8,White,Male,Yes,Yes,3.0,No,No
+14,Black/African American,Female,Yes,Yes,2.0,No,No
+16,White,Male,Yes,Yes,2.0,Yes,No
+13,White,Male,Yes,Yes,2.0,Yes,Yes
+15,White,Male,Yes,Yes,1.0,Yes,No
+15,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,2.0,No,Yes
+5,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,1.0,No,No
+10,White,Female,Yes,Yes,2.0,No,No
+15,White,Male,Yes,Yes,3.0,Yes,Yes
+2,Black/African American,Female,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,2.0,Yes,No
+8,White,Male,Yes,Yes,2.0,No,Yes
+14,White,Male,Yes,Yes,1.0,Yes,Yes
+3,White,Male,Yes,Yes,2.0,No,Yes
+13,Asian,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,3.0,No,No
+15,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,1.0,Yes,Yes
+13,Asian,Male,Yes,Yes,3.0,Yes,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+8,White,Female,Yes,Yes,1.0,No,No
+14,White,Male,Yes,Yes,2.0,Yes,Yes
+6,White,Male,Yes,Yes,2.0,No,Yes
+15,Black/African American,Male,Yes,Yes,2.0,No,Yes
+16,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+12,White,Male,Yes,Yes,3.0,Yes,Yes
+10,White,Male,Yes,Yes,2.0,Yes,Yes
+6,White,Male,Yes,Yes,2.0,Yes,Yes
+8,White,Male,Yes,Yes,3.0,Yes,Yes
+8,White,Male,Yes,Yes,1.0,No,No
+4,White,Male,Yes,Yes,1.0,No,Yes
+14,Asian,Male,Yes,Yes,2.0,No,Yes
+3,White,Male,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,2.0,No,No
+17,White,Male,Yes,Yes,1.0,No,No
+8,Asian,Male,Yes,Yes,2.0,No,Yes
+17,White,Male,Yes,Yes,1.0,No,No
+9,White,Male,Yes,Yes,1.0,Yes,No
+12,White,Male,Yes,Yes,1.0,No,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+7,White,Male,Yes,Yes,1.0,No,No
+4,White,Male,Yes,Yes,3.0,No,Yes
+15,White,Male,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+16,White,Female,Yes,Yes,3.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,No
+16,White,Male,Yes,Yes,1.0,No,No
+13,Asian,Male,Yes,Yes,3.0,Yes,Yes
+13,Black/African American,Male,Yes,Yes,2.0,No,No
+10,White,Female,Yes,Yes,1.0,No,Yes
+7,Black/African American,Male,Yes,Yes,2.0,Yes,Yes
+11,White,Male,Yes,Yes,1.0,Yes,Yes
+4,White,Male,Yes,Yes,1.0,No,Yes
+9,Black/African American,Female,Yes,Yes,2.0,No,Yes
+12,White,Female,Yes,Yes,1.0,No,No
+11,White,Male,Yes,Yes,2.0,Yes,Yes
+4,White,Female,Yes,Yes,3.0,No,No
+13,White,Male,Yes,Yes,1.0,No,No
+10,American Indian or Alaskan Native,Male,Yes,Yes,1.0,No,Yes
+17,White,Male,Yes,Yes,1.0,No,No
+5,White,Male,Yes,Yes,1.0,No,No
+11,White,Female,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+9,Black/African American,Male,Yes,Yes,2.0,Yes,Yes
+16,White,Male,Yes,Yes,2.0,No,Yes
+6,White,Male,Yes,Yes,1.0,Yes,Yes
+6,Two or More Races,Male,Yes,Yes,3.0,No,Yes
+14,White,Male,Yes,Yes,1.0,No,Yes
+2,White,Male,Yes,Yes,1.0,No,Yes
+5,Asian,Male,Yes,Yes,3.0,No,Yes
+15,White,Male,Yes,Yes,1.0,Yes,Yes
+13,White,Male,Yes,Yes,1.0,No,Yes
+12,White,Male,Yes,Yes,1.0,No,No
+12,White,Male,Yes,Yes,1.0,No,Yes
+10,Two or More Races,Male,Yes,Yes,1.0,No,No
+12,White,Female,Yes,Yes,3.0,No,Yes
+2,Asian,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Female,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,2.0,No,Yes
+14,White,Male,Yes,Yes,1.0,No,Yes
+15,White,Male,Yes,Yes,3.0,No,Yes
+10,White,Male,Yes,Yes,1.0,No,Yes
+17,White,Male,Yes,Yes,2.0,Yes,Yes
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+11,White,Male,Yes,Yes,2.0,No,No
+15,White,Male,Yes,Yes,2.0,No,Yes
+5,Asian,Male,Yes,Yes,1.0,No,Yes
+14,White,Male,Yes,Yes,1.0,Yes,Yes
+7,White,Male,Yes,Yes,2.0,No,No
+17,White,Male,Yes,Yes,1.0,Yes,No
+9,Two or More Races,Male,Yes,Yes,2.0,No,No
+14,White,Female,Yes,Yes,1.0,No,No
+17,White,Female,Yes,Yes,2.0,Yes,Yes
+17,White,Male,Yes,Yes,1.0,Yes,Yes
+4,Two or More Races,Male,Yes,Yes,3.0,No,No
+6,Asian,Female,Yes,Yes,1.0,No,No
+10,White,Male,Yes,Yes,3.0,Yes,Yes
+12,White,Female,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,2.0,No,No
+7,White,Male,Yes,Yes,2.0,No,Yes
+13,White,Male,Yes,Yes,3.0,Yes,Yes
+16,Black/African American,Male,Yes,Yes,1.0,No,No
+4,Two or More Races,Female,Yes,Yes,1.0,No,No
+2,Two or More Races,Male,Yes,Yes,3.0,No,Yes
+3,White,Male,Yes,Yes,2.0,No,Yes
+12,White,Male,Yes,Yes,2.0,Yes,No
+17,White,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,1.0,No,No
+13,White,Male,Yes,Yes,2.0,No,Yes
+15,Black/African American,Male,Yes,Yes,2.0,Yes,Yes
+15,White,Male,Yes,Yes,1.0,Yes,Yes
+16,White,Female,Yes,Yes,1.0,No,No
+5,White,Male,Yes,Yes,1.0,No,Yes
+7,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+17,White,Male,Yes,Yes,1.0,No,No
+17,White,Male,Yes,Yes,3.0,No,Yes
+11,Black/African American,Male,Yes,Yes,2.0,Yes,Yes
+10,White,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,2.0,No,No
+3,White,Female,Yes,Yes,1.0,No,Yes
+6,Two or More Races,Male,Yes,Yes,2.0,No,No
+17,White,Male,Yes,Yes,2.0,Yes,Yes
+15,White,Female,Yes,Yes,1.0,No,No
+6,White,Male,Yes,Yes,2.0,No,No
+9,White,Male,Yes,Yes,1.0,No,Yes
+15,Black/African American,Male,Yes,Yes,2.0,No,No
+17,White,Male,Yes,Yes,1.0,Yes,Yes
+11,White,Male,Yes,Yes,2.0,Yes,Yes
+13,White,Female,Yes,Yes,1.0,No,No
+10,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+5,White,Female,Yes,Yes,2.0,No,No
+3,White,Male,Yes,Yes,2.0,No,Yes
+17,White,Female,Yes,Yes,1.0,Yes,Yes
+17,White,Male,Yes,Yes,2.0,Yes,Yes
+12,White,Female,Yes,Yes,1.0,No,Yes
+6,White,Male,Yes,Yes,2.0,No,No
+16,White,Female,Yes,Yes,1.0,No,No
+5,White,Female,Yes,Yes,2.0,No,Yes
+16,White,Female,Yes,Yes,2.0,Yes,No
+14,White,Male,Yes,Yes,2.0,No,Yes
+6,White,Male,Yes,Yes,1.0,No,Yes
+10,White,Male,Yes,Yes,2.0,Yes,Yes
+10,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+13,White,Female,Yes,Yes,3.0,No,No
+11,Asian,Male,Yes,Yes,1.0,No,Yes
+5,White,Male,Yes,Yes,2.0,No,Yes
+15,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+15,White,Male,Yes,Yes,2.0,No,Yes
+16,White,Female,Yes,Yes,1.0,No,No
+13,White,Female,Yes,Yes,1.0,No,No
+11,White,Male,Yes,Yes,1.0,Yes,Yes
+17,White,Male,Yes,Yes,1.0,Yes,No
+11,Black/African American,Male,Yes,Yes,2.0,Yes,Yes
+17,White,Female,Yes,Yes,2.0,Yes,Yes
+14,White,Male,Yes,Yes,1.0,No,Yes
+15,White,Male,Yes,Yes,1.0,No,Yes
+14,Two or More Races,Male,Yes,Yes,1.0,Yes,No
+9,White,Male,Yes,Yes,2.0,No,Yes
+16,White,Male,Yes,Yes,2.0,Yes,Yes
+15,White,Male,Yes,Yes,3.0,No,Yes
+3,White,Female,Yes,Yes,2.0,No,Yes
+14,White,Female,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,3.0,No,Yes
+14,White,Male,Yes,Yes,2.0,Yes,Yes
+11,White,Male,Yes,Yes,1.0,No,Yes
+2,Native Hawaiian or Other Pacific Islander,Male,Yes,Yes,1.0,No,Yes
+3,Black/African American,Female,Yes,Yes,2.0,No,No
+15,White,Male,Yes,Yes,1.0,Yes,No
+14,White,Male,Yes,Yes,2.0,Yes,Yes
+8,Asian,Male,Yes,Yes,2.0,No,Yes
+2,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+10,Asian,Male,Yes,Yes,3.0,Yes,Yes
+3,White,Male,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,1.0,No,Yes
+3,White,Male,Yes,Yes,2.0,No,Yes
+15,White,Male,Yes,Yes,2.0,Yes,Yes
+15,White,Male,Yes,Yes,2.0,No,Yes
+13,White,Male,Yes,Yes,1.0,No,No
+11,White,Female,Yes,Yes,2.0,Yes,Yes
+11,Two or More Races,Male,Yes,Yes,2.0,No,Yes
+5,White,Male,Yes,Yes,2.0,No,Yes
+12,White,Male,Yes,Yes,2.0,Yes,Yes
+9,White,Male,Yes,Yes,1.0,No,No
+3,White,Male,Yes,Yes,1.0,No,Yes
+12,White,Male,Yes,Yes,1.0,No,Yes
+11,White,Female,Yes,Yes,1.0,No,Yes
+16,Black/African American,Male,Yes,Yes,3.0,No,Yes
+7,White,Male,Yes,Yes,1.0,Yes,Yes
+11,Black/African American,Male,Yes,Yes,3.0,Yes,No
+16,White,Female,Yes,Yes,1.0,No,No
+6,White,Male,Yes,Yes,3.0,No,Yes
+17,White,Male,Yes,Yes,1.0,No,Yes
+4,Asian,Female,Yes,Yes,1.0,No,Yes
+12,White,Male,Yes,Yes,2.0,No,Yes
+9,White,Male,Yes,Yes,1.0,No,No
+5,White,Male,Yes,Yes,1.0,No,Yes
+15,Black/African American,Male,Yes,Yes,2.0,Yes,Yes
+14,Two or More Races,Male,Yes,Yes,1.0,No,Yes
+10,White,Male,Yes,Yes,2.0,Yes,Yes
+15,White,Male,Yes,Yes,1.0,No,No
+9,White,Female,Yes,Yes,1.0,No,Yes
+3,White,Female,Yes,Yes,1.0,No,Yes
+7,White,Male,Yes,Yes,1.0,No,Yes
+16,White,Male,Yes,Yes,2.0,Yes,No
+10,White,Male,Yes,Yes,1.0,No,No
+3,White,Female,Yes,Yes,2.0,No,Yes
+8,White,Male,Yes,Yes,2.0,No,Yes
+12,White,Male,Yes,Yes,1.0,No,Yes
+10,Black/African American,Male,Yes,Yes,3.0,No,Yes
+12,White,Male,Yes,Yes,2.0,Yes,No
+11,White,Male,Yes,Yes,1.0,No,No
+8,White,Male,Yes,Yes,1.0,No,Yes
+13,White,Male,Yes,Yes,3.0,Yes,Yes
+14,White,Female,Yes,Yes,3.0,Yes,Yes
