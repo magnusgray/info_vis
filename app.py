@@ -1,6 +1,5 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
 from dash.dependencies import Input, Output, State
 import plotly.express as px
 import plotly.graph_objects as go
@@ -15,6 +14,8 @@ import base64
 from ast import literal_eval
 import itertools
 import seaborn as sns
+
+### Setting up the main data frame
 
 adult1_columns = ['a1_age', 'a1_sex', 'a1_employed', 'a1_grade', 'a1_menthealth', 'a1_physhealth', 'a1_marital', 'a1_relation']
 adult2_columns = ['a2_age', 'a2_sex', 'a2_employed', 'a2_grade', 'a2_menthealth', 'a2_physhealth', 'a2_marital', 'a2_relation']
@@ -57,6 +58,9 @@ corr2 = data2.corr()
 #corr2 = corr2.mask(mask2)
 
 
+
+### Demographic charts
+
 fig_1_1 = px.histogram(data2, x="Age of Child")
 fig_1_1.update_layout(bargap=0.1)
 fig_1_1.update_layout(autosize=True, height=500, width=1000)
@@ -70,6 +74,10 @@ race_labels = ["White", "Black or African American", "American Indian or Alaska 
 race_count = data2["Race of Child"].value_counts().to_list()
 fig_3_3 = go.Figure(data=[go.Pie(labels=race_labels, values=race_count, textinfo='label+percent', insidetextorientation='horizontal')])
 fig_3_3.update_layout(autosize=True, height=500, width=1000)
+
+
+
+### The app
 
 app = dash.Dash(__name__)
 
@@ -262,15 +270,6 @@ app.layout = html.Div([
     html.H1(""),
 """
 
-"""
-    dcc.Graph(figure = fig_1_1),
-    html.H1(""),
-    html.H3("Data by Child Sex & Race"),
-    html.Div(children=[
-        dcc.Graph(figure = fig_2_2, style={'display': 'inline-block'}),
-        dcc.Graph(figure = fig_3_3, style={'display': 'inline-block'}),
-    ], style={'width': '100%', 'display': 'inline-block'}),
-"""
 
 ### Data overview
 @app.callback(
@@ -290,27 +289,11 @@ def update_overview(var):
         fig.update_layout(title_text="Percent of Children by Race", autosize=True, height=500, width=1000)
         return fig
     elif var == 2:
-        df_gender_descriptive_stats = pd.DataFrame(df_raw_main_data['Sex of Selected Child (S1)'].value_counts())
-        df_gender_descriptive_stats.reset_index(inplace=True)
-
-        df_gender_descriptive_stats.rename(columns={'Sex of Selected Child (S1)':'Count','index': 'Gender'}, inplace=True)
-        df_gender_descriptive_stats.loc[df_gender_descriptive_stats.Gender==1,['Gender']]='Male'
-        df_gender_descriptive_stats.loc[df_gender_descriptive_stats.Gender==2, ['Gender']] = 'Female'
-
-        fig_gender_piechart = px.pie(df_gender_descriptive_stats,
-                                    values='Count',
-                                    names='Gender',
-                                    title='Percent of Children by Gender',
-                                    color='Gender',
-                                    color_discrete_map={'Male': 'royalblue',
-                                                        'Female': 'pink'}
-                                    )
-        fig_gender_piechart.update_traces(textposition='inside', textinfo='percent+label')
-        #sex_labels = ["Male", "Female"]
-        #sex_count = data2["Sex of Child"].value_counts().to_list()
-        #fig = go.Figure(data=[go.Pie(labels=sex_labels, values=sex_count, textinfo='label+percent', insidetextorientation='radial')])
-        #fig.update_layout(autosize=True, height=500, width=750)
-        return fig_gender_piechart
+        sex_labels = ["Male", "Female"]
+        sex_count = data2["Sex of Child"].value_counts().to_list()
+        fig = go.Figure(data=[go.Pie(labels=sex_labels, values=sex_count, textinfo='label+percent', insidetextorientation='radial')])
+        fig.update_layout(autosize=True, height=500, width=750)
+        return fig
 
 ### Makes heatmap based on selected variables
 
