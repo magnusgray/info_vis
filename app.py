@@ -223,6 +223,16 @@ app.layout = html.Div([
         tooltip={"placement": "bottom", "always_visible": True},
     ),
     html.H1(""),
+    html.H3("Please select any severity vaiables to be filtered and the range of severity levels you would like to see."),
+    html.H1(""),
+    dcc.Dropdown(
+        id='severity_filter',
+        options=[{'label': x, "value": x} for x in ["Severity of Allergies", "Severity of Arthritis", "Severity of Asthma", "Severity of Blood Disorder", "Severity of Diabetes", "Severity of Epilepsy", "Severity of Genetic Condition", "Severity of Headaches", "Severity of Heart Condition", "Severity of ADD/ADHD", "Severity of Anxiety", "Severity of Autism", "Severity of Behavior Problems", "Severity of Depression", "Severity of Developmental Delay", "Severity of Intellectual Disability", "Severity of Learning Disability", "Severity of Speech Disorder", "Severity of Tourette Syndrome"]],
+        value=[],
+        multi=True
+    ),
+    html.H1(""),
+    dcc.RangeSlider(id="severity_level", min=0, max=3, step=1, value=[0, 3], marks={0: '0',1: '1',2: '2',3: '3'},),
     html.Img(id="node_link"),
     html.H1(""),
     html.H2("Multiple Regression Visualization Tool"),
@@ -394,10 +404,18 @@ def update_scatter(click_data, vars, age, race, sex):
     Input("variables2", "value"),
     Input("corr_strength", "value"),
     Input('greater_less', 'value'),
+    Input('severity_filter', 'value'),
+    Input('severity_level', 'value')
 )
-def update_node_link(vars, corr_strength, greater_less):
+def update_node_link(vars, corr_strength, greater_less, severity_filter, severity_level):
     df = data2[vars]
-    new_corr = df.corr()
+
+    if severity_filter:
+        df2 = df
+        for x in severity_filter:
+            df2 = df2[df2[x].between(severity_level[0], severity_level[1], inclusive=True)]
+        new_corr = df2.corr()
+    else: new_corr = df.corr()
     
     buf = io.BytesIO() 
 
