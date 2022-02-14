@@ -391,9 +391,10 @@ def update_scatter(click_data, vars, age, race, sex):
         df['combo'] = df[x_value].astype(str) + df[y_value].astype(str)
         df['frequency'] = df['combo'].map(df['combo'].value_counts())
         freq = df['frequency'].tolist()
-        fig = px.scatter(df, x=x_value, y=y_value, trendline="ols", trendline_color_override="red", size=freq)
+        fig = px.scatter(df, x=x_value, y=y_value, trendline="ols", trendline_color_override="red", hover_data={x_value: True, y_value: True, "Frequency": freq})
         fig.update_layout(xaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
         fig.update_layout(yaxis = dict(tickmode = 'linear', tick0 = 0,dtick = 1))
+        fig.update_traces(marker_size=12)
         fig.update_layout(autosize=True, height=1000, width=1000)
         return fig
 
