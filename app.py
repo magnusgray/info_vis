@@ -223,6 +223,19 @@ app.layout = html.Div([
         tooltip={"placement": "bottom", "always_visible": True},
     ),
     html.H1(""),
+    html.H3("Please select the range of ages you would like to see."),
+    html.H1(""),
+    dcc.RangeSlider(id="age_range", min=0, max=17, step=1, value=[0, 17], marks={0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: "5", 6: "6", 7: "7", 8: "8", 9: "9", 10: "10", 11: "11", 12: "12", 13: "13", 14: "14", 15: "15", 16: "16", 17: "17"},),
+    html.H1(""),
+    html.H3("Please select any diagnoses that you would like to filter out or exclude."),
+    html.H1(""),
+    dcc.Dropdown(
+        id='diagnosis_filter',
+        options=[{'label': x, "value": x} for x in ["Diagnosed with Allergies", "Diagnosed with Arthritis", "Diagnosed with Asthma", "Diagnosed with Blood Disorder", "Diagnosed with Diabetes", "Diagnosed with Epilepsy", "Diagnosed with Genetic Condition", "Diagnosed with Headaches", "Diagnosed with Heart Condition", "Diagnosed with ADD/ADHD", "Diagnosed with Anxiety", "Diagnosed with Autism", "Diagnosed with Behavior Problems", "Diagnosed with Depression", "Diagnosed with Developmental Delay", "Diagnosed with Intellectual Disability", "Diagnosed with Learning Disability", "Diagnosed with Speech Disorder", "Diagnosed with Tourette Syndrome"]],
+        value=[],
+        multi=True
+    ),
+    html.H1(""),
     html.H3("Please select any severity vaiables to be filtered and the range of severity levels you would like to see."),
     html.H1(""),
     dcc.Dropdown(
@@ -232,7 +245,7 @@ app.layout = html.Div([
         multi=True
     ),
     html.H1(""),
-    dcc.RangeSlider(id="severity_level", min=0, max=3, step=1, value=[0, 3], marks={0: '0',1: '1',2: '2',3: '3'},),
+    dcc.RangeSlider(id="severity_level", min=0, max=3, step=1, value=[0, 3], marks={0: '0 - None', 1: '1 - Mild', 2: '2 - Moderate',3: '3 - Severe'},),
     html.Img(id="node_link"),
     html.H1(""),
     html.H2("Multiple Regression Visualization Tool"),
@@ -405,16 +418,21 @@ def update_scatter(click_data, vars, age, race, sex):
     Input("variables2", "value"),
     Input("corr_strength", "value"),
     Input('greater_less', 'value'),
+    Input('age_range', 'value'),
+    Input('diagnosis_filter', 'value'),
     Input('severity_filter', 'value'),
     Input('severity_level', 'value')
 )
-def update_node_link(vars, corr_strength, greater_less, severity_filter, severity_level):
-    df = data2[vars]
+def update_node_link(vars, corr_strength, greater_less, age_range, diagnosis_filter, severity_filter, severity_level):
+    df = data2[data2["Age of Child"].between(age_range[0], age_range[1], inclusive=True)]
+    df = df[vars]
 
-    if severity_filter:
+    if diagnosis_filter or severity_filter:
         df2 = df
-        for x in severity_filter:
-            df2 = df2[df2[x].between(severity_level[0], severity_level[1], inclusive=True)]
+        for x in diagnosis_filter:
+            df2 = df2[df2[x] == 2.0]
+        for y in severity_filter:
+            df2 = df2[df2[y].between(severity_level[0], severity_level[1], inclusive=True)]
         new_corr = df2.corr()
     else: new_corr = df.corr()
     
