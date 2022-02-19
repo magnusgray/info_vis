@@ -231,7 +231,16 @@ app.layout = html.Div([
     html.H1(""),
     dcc.Dropdown(
         id='diagnosis_filter',
-        options=[{'label': x, "value": x} for x in ["Diagnosed with Allergies", "Diagnosed with Arthritis", "Diagnosed with Asthma", "Diagnosed with Blood Disorder", "Diagnosed with Diabetes", "Diagnosed with Epilepsy", "Diagnosed with Genetic Condition", "Diagnosed with Headaches", "Diagnosed with Heart Condition", "Diagnosed with ADD/ADHD", "Diagnosed with Anxiety", "Diagnosed with Autism", "Diagnosed with Behavior Problems", "Diagnosed with Depression", "Diagnosed with Developmental Delay", "Diagnosed with Intellectual Disability", "Diagnosed with Learning Disability", "Diagnosed with Speech Disorder", "Diagnosed with Tourette Syndrome"]],
+        options=[{'label': x, "value": x} for x in ["Diagnosed with Allergies", "Diagnosed with Arthritis", "Diagnosed with Asthma", "Diagnosed with a Blood Disorder", "Diagnosed with Cerebral Palsy", "Diagnosed with Cystic Fibrosis", "Diagnosed with Diabetes", "Diagnosed with Epilepsy", "Diagnosed with a Genetic Condition", "Diagnosed with Headaches", "Diagnosed with a Heart Condition", "Overweight", "Diagnosed with ADD/ADHD", "Diagnosed with Anxiety", "Diagnosed with Autism", "Diagnosed with Behavior Problems", "Diagnosed with Depression", "Diagnosed with a Developmental Delay", "Diagnosed with Down Syndrome", "Diagnosed with an Intellectual Disability", "Diagnosed with a Learning Disability", "Diagnosed with a Speech Disorder", "Diagnosed with Tourette Syndrome"]],
+        value=[],
+        multi=True
+    ),
+    html.H1(""),
+    html.H3("Please select any current health conditions that you would like to filter out or exclude."),
+    html.H1(""),
+    dcc.Dropdown(
+        id='current_filter',
+        options=[{'label': x, "value": x} for x in ["Currently has Allergies", "Currently has Arthritis", "Currently has Asthma", "Blindness", "Currently has Cerebral Palsy", "Deafness", "Currently has Diabetes", "Currently has Epilepsy", "Currently has Headaches", "Currently has a Heart Condition", "Currently has ADD/ADHD", "Currently has Anxiety", "Currently has Autism", "Currently has Behavior Problems", "Currently has Depression", "Currently has a Developmental Delay", "Currently has an Intellectual Disability", "Currently has a Learning Disability", "Currently has a Speech Disorder", "Currently has Tourette Syndrome"]],
         value=[],
         multi=True
     ),
@@ -420,21 +429,27 @@ def update_scatter(click_data, vars, age, race, sex):
     Input('greater_less', 'value'),
     Input('age_range', 'value'),
     Input('diagnosis_filter', 'value'),
+    Input('current_filter', 'value'),
     Input('severity_filter', 'value'),
     Input('severity_level', 'value')
 )
-def update_node_link(vars, corr_strength, greater_less, age_range, diagnosis_filter, severity_filter, severity_level):
+def update_node_link(vars, corr_strength, greater_less, age_range, diagnosis_filter, current_filter, severity_filter, severity_level):
     df = data2[data2["Age of Child"].between(age_range[0], age_range[1], inclusive=True)]
-    df = df[vars]
+    #df = df[vars]
 
-    if diagnosis_filter or severity_filter:
+    if diagnosis_filter or current_filter or severity_filter:
         df2 = df
         for x in diagnosis_filter:
             df2 = df2[df2[x] == 2.0]
-        for y in severity_filter:
-            df2 = df2[df2[y].between(severity_level[0], severity_level[1], inclusive=True)]
-        new_corr = df2.corr()
-    else: new_corr = df.corr()
+        for x in current_filter:
+            df2 = df2[df2[x] == 2.0]
+        for x in severity_filter:
+            df2 = df2[df2[x].between(severity_level[0], severity_level[1], inclusive=True)]
+        df3 = df2[vars]
+        new_corr = df3.corr()
+    else: 
+        df = df[vars]
+        new_corr = df.corr()
     
     buf = io.BytesIO() 
 
