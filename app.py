@@ -439,6 +439,7 @@ def update_node_link(vars, corr_strength, greater_less, age_range, diagnosis_fil
 
     if diagnosis_filter or current_filter or severity_filter:
         df2 = df
+        print(df2)
         for x in diagnosis_filter:
             df2 = df2[df2[x] == 2.0]
         for x in current_filter:
@@ -620,7 +621,7 @@ def select_vars2(all_selected, options):
     if all_selected:
         selected_vars = [option["value"] for option in options]
     else:
-        selected_vars = ["Diagnosed with ADD/ADHD", "Currently has ADD/ADHD", "Severity of ADD/ADHD", "Medicated for ADD/ADHD", "Recieves Behavioral Treatment for ADD/ADHD", "Diagnosed with Anxiety", "Currently has Anxiety", "Severity of Anxiety", "Diagnosed with Autism", "Currently has Autism", "Severity of Autism", "Medicated for Autism", "Receives Behavioral Treatment for Autism", "Diagnosed with Behavior Problems", "Currently has Behavior Problems", "Severity of Behavior Problems", "Diagnosed with Depression", "Currently has Depression", "Severity of Depression", "Diagnosed with a Developmental Delay", "Currently has a Developmental Delay", "Severity of Developmental Delay", "Diagnosed with Down Syndrome", "Takes Emotion/Concentration/Behavior Medication", "Diagnosed with an Intellectual Disability", "Currently has an Intellectual Disability", "Severity of Intellectual Disability", "Diagnosed with a Learning Disability", "Currently has a Learning Disability", "Severity of Learning Disability", "Diagnosed with a Speech Disorder", "Currently has a Speech Disorder", "Severity of Speech Disorder", "Diagnosed with Tourette Syndrome", "Currently has Tourette Syndrome", "Severity of Tourette Syndrome"]
+        selected_vars = ["Severity of Allergies", "Severity of Arthritis", "Severity of Asthma", "Severity of Blood Disorder", "Severity of Diabetes", "Severity of Epilepsy", "Severity of Genetic Condition", "Severity of Headaches", "Severity of Heart Condition", "Severity of ADD/ADHD", "Severity of Anxiety", "Severity of Autism", "Severity of Behavior Problems", "Severity of Depression", "Severity of Developmental Delay", "Severity of Intellectual Disability", "Severity of Learning Disability", "Severity of Speech Disorder", "Severity of Tourette Syndrome"]
     return selected_vars
 
 """
