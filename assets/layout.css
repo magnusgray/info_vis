@@ -1,0 +1,51 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.navbar {
+  height: 40px;
+  background-color: #485159;
+  color: white;
+  padding: 10px;
+}
+
+.navbarTitle {
+  font-size: 2em;
+  color: white;
+}
+
+.mainPanel {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.leftPanel {
+  width: 350px;
+  background-color: #A7BED3;
+  padding: 10px;
+}
+
+.contentPanel {
+  width: 100%;
+  background-color: #F6EEDB;
+  padding: 10px;
+}
+
+.filter {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.filterLabel {
+  padding-bottom: 10px;
+}
