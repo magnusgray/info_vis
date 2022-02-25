@@ -106,6 +106,22 @@ app.layout = html.Div(
                 value=[1, 2],
                 multi=True
             ),
+            html.H3("Health Conditions to Exclude:"),
+            dcc.Dropdown(
+                id='health_filter',
+                options=[{'label': x, "value": x} for x in ["Diagnosed with Allergies", "Currently has Allergies", "Diagnosed with Arthritis", "Currently has Arthritis", "Diagnosed with Asthma", "Currently has Asthma", "Diagnosed with a Blood Disorder", "Blindness", "Diagnosed with Cerebral Palsy", "Currently has Cerebral Palsy", "Confirmed Concussion/Brain Injury", "Diagnosed with Cystic Fibrosis", "Deafness", "Diagnosed with Diabetes", "Currently has Diabetes", "Diagnosed with Epilepsy", "Currently has Epilepsy", "Diagnosed with a Genetic Condition", "Diagnosed with Headaches", "Currently has Headaches", "Diagnosed with a Heart Condition", "Currently has a Heart Condition", "Overweight", "Diagnosed with ADD/ADHD", "Currently has ADD/ADHD", "Diagnosed with Anxiety", "Currently has Anxiety", "Diagnosed with Autism", "Currently has Autism", "Diagnosed with Behavior Problems", "Currently has Behavior Problems", "Diagnosed with Depression", "Currently has Depression", "Diagnosed with a Developmental Delay", "Currently has a Developmental Delay", "Diagnosed with Down Syndrome", "Diagnosed with an Intellectual Disability", "Currently has an Intellectual Disability", "Diagnosed with a Learning Disability", "Currently has a Learning Disability", "Diagnosed with a Speech Disorder", "Currently has a Speech Disorder", "Diagnosed with Tourette Syndrome", "Currently has Tourette Syndrome"]],
+                value=[],
+                multi=True
+            ),
+            html.H3("Severity:"),
+            dcc.Dropdown(
+                id='severity_filter',
+                options=[{'label': x, "value": x} for x in ["Severity of Allergies", "Severity of Arthritis", "Severity of Asthma", "Severity of Blood Disorder", "Severity of Diabetes", "Severity of Epilepsy", "Severity of Genetic Condition", "Severity of Headaches", "Severity of Heart Condition", "Severity of ADD/ADHD", "Severity of Anxiety", "Severity of Autism", "Severity of Behavior Problems", "Severity of Depression", "Severity of Developmental Delay", "Severity of Intellectual Disability", "Severity of Learning Disability", "Severity of Speech Disorder", "Severity of Tourette Syndrome"]],
+                value=[],
+                multi=True
+            ),
+            html.H3(""),
+            dcc.RangeSlider(id="severity_level", min=1, max=3, step=1, value=[1, 3], marks={1: '1 - Mild', 2: '2 - Moderate',3: '3 - Severe'},),
           ]
         ),
         html.Div(
@@ -237,16 +253,28 @@ app.layout = html.Div(
   Input('age_filter', 'value'), 
   Input('race_filter', 'value'),
   Input('sex_filter', 'value'),
+  Input('health_filter', 'value'),
+  Input('severity_filter', 'value'),
+  Input('severity_level', 'value'),
 )
 def handle_filter_update(*args):
     print('filter_update=', args)
     age = args[0]
     race = args[1]
     sex = args[2]
+    health = args[3]
+    severity = args[4]
+    severity_level = args[5]
 
     filtered_df = data2[data2["Age of Child"].between(age[0], age[1], inclusive=True)]
     filtered_df = filtered_df[filtered_df["Race of Child"].isin(race)]
     filtered_df = filtered_df[filtered_df["Sex of Child"].isin(sex)]
+    for x in health:
+        filtered_df = filtered_df[filtered_df[x] == 2.0]
+    for x in severity:
+        filtered_df = filtered_df[filtered_df[x].between(severity_level[0], severity_level[1], inclusive=True)]
+
+    print(filtered_df)
     return filtered_df.to_json(date_format='iso', orient='split')
 
 
@@ -346,24 +374,6 @@ def update_scatter(click_data, data, vars):
 def update_node_link(data, vars, corr_strength, greater_less):
     df = pd.read_json(data, orient='split')
     df = df[vars]
-
-    
-    """
-    if diagnosis_filter or current_filter or severity_filter:
-        df2 = df
-        print(df2)
-        for x in diagnosis_filter:
-            df2 = df2[df2[x] == 2.0]
-        for x in current_filter:
-            df2 = df2[df2[x] == 2.0]
-        for x in severity_filter:
-            df2 = df2[df2[x].between(severity_level[0], severity_level[1], inclusive=True)]
-        df3 = df2[vars]
-        new_corr = df3.corr()
-    else: 
-        df = df[vars]
-        new_corr = df.corr()
-    """
     
     new_corr = df.corr()
 
