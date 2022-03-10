@@ -288,9 +288,9 @@ def handle_filter_update(*args):
 def update_overview(data, var):
     df = pd.read_json(data, orient='split')
     if var == 0:
-        fig = px.histogram(df, x="Age of Child", title="Count of Children by Age")
+        fig = px.histogram(df, x="Age of Child", title="<b>Count of Children by Age")
         fig.update_layout(bargap=0.1)
-        fig.update_layout(autosize=True, height=500, width=1000)
+        fig.update_layout(autosize=True, height=500, width=1000, font=dict(family="Times New Roman", size=20, color="Black"))
         return fig
     elif var == 1:
         race_dict = dict([(1, "White"), (2, "Black or African American"), (3, "American Indian or Alaska Native"), (4, "Asian"), (5, "Native Hawaiian or Other Pacific Islander"), (7, "Two or More Races")])
@@ -299,7 +299,7 @@ def update_overview(data, var):
         key_list = list(race_count_df.index)
         race_labels = [race_dict[item] for item in key_list]
         fig = go.Figure(data=[go.Pie(labels=race_labels, values=race_count, textinfo='label+percent', insidetextorientation='horizontal')])
-        fig.update_layout(title_text="Percent of Children by Race", autosize=True, height=500, width=1000)
+        fig.update_layout(title_text="<b>Percent of Children by Race</b>", autosize=True, height=700, width=1200, font=dict(family="Times New Roman", size=20, color="Black"))
         return fig
     elif var == 2:
         sex_dict = dict([(1, "Male"), (2, "Female")])
@@ -308,7 +308,7 @@ def update_overview(data, var):
         key_list = list(sex_count_df.index)
         sex_labels = [sex_dict[item] for item in key_list]
         fig = go.Figure(data=[go.Pie(labels=sex_labels, values=sex_count, textinfo='label+percent', insidetextorientation='radial')])
-        fig.update_layout(autosize=True, height=500, width=750)
+        fig.update_layout(title_text="<b>Percent of Children by Sex</b>", autosize=True, height=500, width=750, font=dict(family="Times New Roman", size=20, color="Black"))
         return fig
 
 
